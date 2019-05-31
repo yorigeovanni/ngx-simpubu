@@ -1,10 +1,14 @@
+import { PeralatanRoutingModule } from './peralatan-routing.module';
+import { PeralatanComponent } from './peralatan.component';
+import { AuthModule } from './../auth/auth.module';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 
-import { PeralatanRoutingModule } from './peralatan-routing.module';
-import { PeralatanComponent } from './peralatan.component';
+
 import { NotFoundComponent } from './not-found/not-found.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AllPeralatanComponent } from './all-peralatan/all-peralatan.component';
@@ -19,10 +23,25 @@ import { KalibrasiComponent } from './kalibrasi/kalibrasi.component';
 import { VerifikasiComponent } from './verifikasi/verifikasi.component';
 
 
+
 @NgModule({
-  declarations: [PeralatanComponent, NotFoundComponent, WelcomeComponent, AllPeralatanComponent, SisiUdaraComponent, SisiDaratComponent, YandarComponent, KerusakanPerbaikanComponent, SukuCadangComponent, MonitoringComponent, SertifikasiComponent, KalibrasiComponent, VerifikasiComponent],
+  declarations: [PeralatanComponent, 
+                  NotFoundComponent, 
+                  WelcomeComponent, 
+                  AllPeralatanComponent, 
+                  SisiUdaraComponent, 
+                  SisiDaratComponent, 
+                  YandarComponent, 
+                  KerusakanPerbaikanComponent, 
+                  SukuCadangComponent, 
+                  MonitoringComponent, 
+                  SertifikasiComponent, 
+                  KalibrasiComponent, 
+                  VerifikasiComponent],
   imports: [
     CommonModule,
+    RouterModule,
+    AuthModule,
     PeralatanRoutingModule,
     MDBBootstrapModulesPro,
   ]

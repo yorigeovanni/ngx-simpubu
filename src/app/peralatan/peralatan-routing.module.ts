@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
+import { LoginComponent } from './../auth/components/login/login.component';
+import { RegisterComponent } from './../auth/components/register/register.component';
 
 import {PeralatanComponent} from './peralatan.component';
 import {WelcomeComponent} from './welcome/welcome.component';
@@ -21,16 +24,18 @@ const routes: Routes = [
   {path : '', component : PeralatanComponent,
       children : [
       	{path : '', component : WelcomeComponent},
-        {path : 'semua-peralatan', component : AllPeralatanComponent},
-        {path : 'sisi-udara', component : SisiUdaraComponent},
-        {path : 'sisi-darat', component : SisiDaratComponent},
-        {path : 'yandar', component : YandarComponent},
-        {path : 'kerusakan-perbaikan', component : KerusakanPerbaikanComponent},
-        {path : 'suku-cadang', component : SukuCadangComponent},
-        {path : 'monitoring', component : MonitoringComponent},
-        {path : 'sertifikasi', component : SertifikasiComponent},
-        {path : 'kalibrasi', component : KalibrasiComponent},
-        {path : 'verifikasi', component : VerifikasiComponent},
+        {path : 'semua-peralatan', component : AllPeralatanComponent , canActivate: [AuthGuard]},
+        {path : 'sisi-udara', component : SisiUdaraComponent , canActivate: [AuthGuard]},
+        {path : 'sisi-darat', component : SisiDaratComponent, canActivate: [AuthGuard]},
+        {path : 'yandar', component : YandarComponent, canActivate: [AuthGuard]},
+        {path : 'kerusakan-perbaikan', component : KerusakanPerbaikanComponent, canActivate: [AuthGuard]},
+        {path : 'suku-cadang', component : SukuCadangComponent, canActivate: [AuthGuard]},
+        {path : 'monitoring', component : MonitoringComponent, canActivate: [AuthGuard]},
+        {path : 'sertifikasi', component : SertifikasiComponent, canActivate: [AuthGuard]},
+        {path : 'kalibrasi', component : KalibrasiComponent, canActivate: [AuthGuard]},
+        {path : 'verifikasi', component : VerifikasiComponent, canActivate: [AuthGuard]},
+        {path : 'login', component : LoginComponent,},
+        {path : 'register', component : RegisterComponent,},
         { path: '**', component: NotFoundComponent }
 
       ],
