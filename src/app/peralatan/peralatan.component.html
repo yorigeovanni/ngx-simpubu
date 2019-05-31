@@ -45,116 +45,78 @@
       <div class="col-lg-7 mr-auto col-md-12">
 
                      
-                    <mdb-card-reveal #cards>
-  <!-- Card front -->
-  <div class="card card-front">
-    <!--Card image-->
-    <div class="view overlay waves-light" mdbWavesEffect>
-      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo11.jpg" alt="Card image cap">
-      <a>
-        <div class="mask rgba-white-slight"></div>
-      </a>
+                      <h3 class="mb-5 dark-grey-text title font-weight-bold wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
+                          <strong>PERALATAN</strong>
+                      </h3>
+
+                      <!-- Description -->
+                      <p align="justify" class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo animi soluta ratione quisquam, dicta
+                          ab cupiditate iure eaque? Repellendus voluptatum, magni impedit delectus, beatae maxime temporibus
+                          maiores quibusdam.</p>
+                      <p align="justify" class="grey-text">Rem magnam ad perferendis iusto sint tempora ea voluptatibus iure, animi excepturi modi aut possimus
+                          in hic molestias repellendus illo ullam odit quia velit. Lorem ipsum dolor sit amet, consectetur
+                          adipisicing elit.</p>
+                      <p align="justify" class="grey-text mb-5">Incidunt eligendi mollitia labore ipsum ex fugit explicabo saepe error neque beatae in, expedita
+                          eveniet quae aliquam assumenda voluptatibus!</p>
+
+                          <!-- Card -->
+<div class="card chart-card">
+
+    <!-- Card content -->
+    <div class="card-body pb-0">
+  
+      <!-- Title -->
+      <h4 class="card-title font-weight-bold">Alie Corporation</h4>
+      <!-- Text -->
+      <p class="card-text mb-4">NYSE: AZHC  •  Oct 16, 1:45PM</p>
+      <div class="d-flex justify-content-between">
+        <p class="display-4 align-self-end">887.32</p>
+        <p class="align-self-end pb-2">887.02 (.03%)</p>
+      </div>
+  
     </div>
-    <!--/.Card image-->
-    <!--Card content-->
-    <div class="card-body">
-      <!--Social shares button-->
-      <a class="activator mr-2">
-        <i class="fas fa-share-alt" (click)="cards.toggle()"></i>
-      </a>
-      <!--Title-->
-      <h4 class="card-title">Card title</h4>
-      <hr>
-      <!--Text-->
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-        card's content.</p>
-      <a class="link-text">
-        <h5 class="waves-light" mdbWavesEffect>Read more
-          <i class="fas fa-chevron-right waves-light" mdbWavesEffect></i>
-        </h5>
-      </a>
-    </div>
-    <!--/.Card content-->
-  </div>
-  <!--/.Card Front-->
-
-  <!-- Card reveal -->
-  <div class="card-reveal white">
-
-    <!-- Content -->
-    <div class="content text-center">
-
-      <h4 class="card-title font-weight-bold py-4">Social shares
-        <i class="fas fa-times text-muted" (click)="cards.toggle()"></i>
-      </h4>
-      <hr>
-      <!-- Social Icons -->
-      <ul class="list-unstyled list-inline d-flex justify-content-center flex-wrap">
-        <li class="list-inline-item">
-          <a mdbBtn floating="true" class="btn-dribbble">
-            <i class="fab fa-dribbble"> </i>
-          </a>
+  
+    <!-- Classic tabs -->
+    <div class="classic-tabs">
+  
+      <!-- Nav tabs -->
+      <ul class="nav tabs-white nav-fill" role="tablist">
+        <li class="nav-item ml-0">
+          <a class="nav-link waves-light active" data-toggle="tab" href="#panel1001" role="tab">Profile</a>
         </li>
-        <li class="list-inline-item">
-          <a mdbBtn floating="true" class="btn-slack">
-            <i class="fab fa-slack"> </i>
-          </a>
+        <li class="nav-item">
+          <a class="nav-link waves-light" data-toggle="tab" href="#panel1002" role="tab">Follow</a>
         </li>
-        <li class="list-inline-item">
-          <a mdbBtn floating="true" class="btn-ins">
-            <i class="fab fa-instagram"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a mdbBtn floating="true" class="btn-pin">
-            <i class="fab fa-pinterest"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a mdbBtn floating="true" class="btn-tw">
-            <i class="fab fa-twitter"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a mdbBtn floating="true" class="btn-gplus">
-            <i class="fab fa-google-plus"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a mdbBtn floating="true" class="btn-git">
-            <i class="fab fa-github"> </i>
-          </a>
+        <li class="nav-item">
+          <a class="nav-link waves-light" data-toggle="tab" href="#panel1003" role="tab">Contact</a>
         </li>
       </ul>
-      <h5 class="font-weight-bold my-4">Join our community</h5>
-      <hr>
-      <!-- Social Icons -->
-      <ul class="list-unstyled list-inline d-flex justify-content-center flex-wrap mt-4">
-        <li class="list-inline-item">
-          <a mdbBtn class="btn-fb px-4">
-            <i class="fab fa-facebook-f"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a mdbBtn class="btn-tw px-4">
-            <i class="fab fa-twitter"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a mdbBtn class="btn-li px-4">
-            <i class="fab fa-linkedin-in"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a mdbBtn class="btn-ins px-4">
-            <i class="fab fa-instagram"> </i>
-          </a>
-        </li>
-      </ul>
+  
+      <div class="tab-content rounded-bottom">
+        <!--Panel 1-->
+        <div class="tab-pane fade in show active" id="panel1001" role="tabpanel">
+          <canvas id="lineChart" height="250px"></canvas>
+        </div>
+        <!--/.Panel 1-->
+        <!--Panel 2-->
+        <div class="tab-pane fade" id="panel1002" role="tabpanel">
+          <p align="justify" class="font-small text-muted mx-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+          <p align="justify" class="font-small text-muted mx-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+        </div>
+        <!--/.Panel 2-->
+        <!--Panel 3-->
+        <div class="tab-pane fade" id="panel1003" role="tabpanel">
+          <img class="img-fluid z-depth-1 rounded mb-3" alt="sample image" src="https://mdbootstrap.com/img/Photos/Others/intro1.jpg">
+          <p align="justify" class="font-small text-muted mx-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima at ipsum sit amet.</p>
+        </div>
+        <!--/.Panel 3-->
+      </div>
+  
     </div>
+    <!-- Classic tabs -->
+  
   </div>
-  <!-- Card reveal -->
-</mdb-card-reveal>
+  <!-- Card -->
 
                   </div>
                   <!-- Grid column -->
