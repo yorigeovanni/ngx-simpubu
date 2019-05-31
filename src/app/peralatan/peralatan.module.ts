@@ -5,6 +5,7 @@ import { AuthModule } from './../auth/auth.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 
@@ -41,6 +42,8 @@ import { VerifikasiComponent } from './verifikasi/verifikasi.component';
   imports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule,
+    FormsModule,
     AuthModule,
     PeralatanRoutingModule,
     MDBBootstrapModulesPro,
