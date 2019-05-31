@@ -9,7 +9,8 @@ import * as fromAdmin from './store/admin.reducer';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AdminEffects } from './store/admin.effects';
-import { CollapseModule, CardsFreeModule, ButtonsModule, BadgeModule, IconsModule, DropdownModule } from 'angular-bootstrap-md';
+import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
+//import { CollapseModule, CardsFreeModule, ButtonsModule, BadgeModule, IconsModule, DropdownModule } from 'angular-bootstrap-md';
 import { SharedModule } from '../shared/shared.module';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
@@ -19,12 +20,13 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
     CommonModule,
     SharedModule,
     BrowserAnimationsModule,
-    CollapseModule,
-    CardsFreeModule,
-    DropdownModule,
-    BadgeModule,
-    ButtonsModule,
-    IconsModule,
+    //CollapseModule,
+    //CardsFreeModule,
+    //DropdownModule,
+    //BadgeModule,
+    //ButtonsModule,
+    //IconsModule,
+    MDBBootstrapModulesPro,
     StoreModule.forFeature('admin', fromAdmin.adminReducer),
     EffectsModule.forFeature([AdminEffects])
   ]
