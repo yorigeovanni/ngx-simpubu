@@ -3,6 +3,8 @@
 
   <div class="row pt-2 mt-5">
     <div class="col-lg-5 col-md-12 mb-3">
+
+      
       <i id="sisi-udara" class="fa fa-th-large m-2" style="text-shadow: rgb(48, 117, 165) 0px 0px 0px, rgb(50, 122, 172) 1px 1px 0px, rgb(52, 127, 179) 2px 2px 0px, rgb(54, 132, 186) 3px 3px 0px, rgb(56, 137, 193) 4px 4px 0px, rgb(58, 142, 200) 5px 5px 0px, rgb(60, 147, 207) 6px 6px 0px, rgb(62, 152, 214) 7px 7px 0px, rgb(64, 157, 221) 8px 8px 0px, rgb(66, 162, 228) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(68, 167, 235);"></i> 
 
 
@@ -43,19 +45,116 @@
       <div class="col-lg-7 mr-auto col-md-12">
 
                      
-                      <h3 class="mb-5 dark-grey-text title font-weight-bold wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
-                          <strong>PERALATAN</strong>
-                      </h3>
+                    <mdb-card-reveal #cards>
+  <!-- Card front -->
+  <div class="card card-front">
+    <!--Card image-->
+    <div class="view overlay waves-light" mdbWavesEffect>
+      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/photo11.jpg" alt="Card image cap">
+      <a>
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+    <!--/.Card image-->
+    <!--Card content-->
+    <div class="card-body">
+      <!--Social shares button-->
+      <a class="activator mr-2">
+        <i class="fas fa-share-alt" (click)="cards.toggle()"></i>
+      </a>
+      <!--Title-->
+      <h4 class="card-title">Card title</h4>
+      <hr>
+      <!--Text-->
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+        card's content.</p>
+      <a class="link-text">
+        <h5 class="waves-light" mdbWavesEffect>Read more
+          <i class="fas fa-chevron-right waves-light" mdbWavesEffect></i>
+        </h5>
+      </a>
+    </div>
+    <!--/.Card content-->
+  </div>
+  <!--/.Card Front-->
 
-                      <!-- Description -->
-                      <p align="justify" class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo animi soluta ratione quisquam, dicta
-                          ab cupiditate iure eaque? Repellendus voluptatum, magni impedit delectus, beatae maxime temporibus
-                          maiores quibusdam.</p>
-                      <p align="justify" class="grey-text">Rem magnam ad perferendis iusto sint tempora ea voluptatibus iure, animi excepturi modi aut possimus
-                          in hic molestias repellendus illo ullam odit quia velit. Lorem ipsum dolor sit amet, consectetur
-                          adipisicing elit.</p>
-                      <p align="justify" class="grey-text mb-5">Incidunt eligendi mollitia labore ipsum ex fugit explicabo saepe error neque beatae in, expedita
-                          eveniet quae aliquam assumenda voluptatibus!</p>
+  <!-- Card reveal -->
+  <div class="card-reveal white">
+
+    <!-- Content -->
+    <div class="content text-center">
+
+      <h4 class="card-title font-weight-bold py-4">Social shares
+        <i class="fas fa-times text-muted" (click)="cards.toggle()"></i>
+      </h4>
+      <hr>
+      <!-- Social Icons -->
+      <ul class="list-unstyled list-inline d-flex justify-content-center flex-wrap">
+        <li class="list-inline-item">
+          <a mdbBtn floating="true" class="btn-dribbble">
+            <i class="fab fa-dribbble"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn floating="true" class="btn-slack">
+            <i class="fab fa-slack"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn floating="true" class="btn-ins">
+            <i class="fab fa-instagram"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn floating="true" class="btn-pin">
+            <i class="fab fa-pinterest"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn floating="true" class="btn-tw">
+            <i class="fab fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn floating="true" class="btn-gplus">
+            <i class="fab fa-google-plus"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn floating="true" class="btn-git">
+            <i class="fab fa-github"> </i>
+          </a>
+        </li>
+      </ul>
+      <h5 class="font-weight-bold my-4">Join our community</h5>
+      <hr>
+      <!-- Social Icons -->
+      <ul class="list-unstyled list-inline d-flex justify-content-center flex-wrap mt-4">
+        <li class="list-inline-item">
+          <a mdbBtn class="btn-fb px-4">
+            <i class="fab fa-facebook-f"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn class="btn-tw px-4">
+            <i class="fab fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn class="btn-li px-4">
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a mdbBtn class="btn-ins px-4">
+            <i class="fab fa-instagram"> </i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Card reveal -->
+</mdb-card-reveal>
 
                   </div>
                   <!-- Grid column -->

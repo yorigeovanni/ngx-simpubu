@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 
 /* ================================================================= COMMON MODULE */
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -38,6 +39,7 @@ import { NotFoundComponent } from './pages-errors/not-found/not-found.component'
   imports: [
   	              MDBBootstrapModulesPro.forRoot(),
                   BrowserModule,
+                  BrowserAnimationsModule,
                   AppRoutingModule,
                   TemplateModule,
                   HttpClientModule,
