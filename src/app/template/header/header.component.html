@@ -1,0 +1,42 @@
+<header class="h-100">
+
+  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar blue-gradient" [containerInside]="true">
+      <mdb-navbar-brand>
+         <img src="assets/logo/perhubungan.png" height="55px" width="55px" class="img-fluid flex-center d-none d-lg-block">
+      </mdb-navbar-brand>
+
+      <a class="navbar-brand ml-3 mt-0 d-none d-lg-block" routerLink="/">
+      <strong>PORTAL - DJPU<br><span class="font-weight-bold">DIREKTORAT BANDAR UDARA</span></strong>
+      </a>
+
+      <a class="navbar-brand mr-auto mt-0 d-lg-none" routerLink="/">
+      <strong><span class="font-weight-bold">SIMPUBU-DBU</span></strong>
+      </a> 
+
+      <links>
+        <ul class="navbar-nav nav-flex-icons ml-auto">
+            <li class="nav-item waves-light">
+              <a class="nav-link" routerLink="/peralatan" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-cogs"></i> PERALATAN</a>
+            </li>
+
+            <li class="nav-item waves-light">
+              <a class="nav-link" routerLink="/personil" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-chalkboard-teacher"></i> PERSONIL</a>
+            </li>
+
+            <li class="nav-item waves-light">
+              <a class="nav-link" routerLink="/satker" routerLinkActive="active" mdbWavesEffect><i class="fas fa-city"></i> SATKER</a>
+            </li>
+
+            <li class="nav-item waves-light">
+              <a class="nav-link" routerLink="/regulasi" routerLinkActive="active" mdbWavesEffect><i class="fas fa-balance-scale"></i> REGULASI</a>
+            </li>
+
+            <li class="nav-item waves-light">
+              <a class="nav-link" routerLink="/auth" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-door-open"></i> MASUK</a>
+            </li>
+
+        </ul>
+      </links>
+  </mdb-navbar>
+
+</header>

@@ -1,0 +1,42 @@
+:host {
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:100vh;
+  font-size: 12px;
+}
+
+
+
+
+:host /deep/ div.mydp.picker {
+  z-index: 98;
+}
+
+:host /deep/ .mydp.picker.picker--opened {
+  z-index: 1000;
+}
+
+:host /deep/ mdb-select {
+  z-index: 99;
+}
+
+
+
+@media (max-width: 740px) {
+          html,
+          body,
+          header,
+          .intro-2 {
+            height: 900px;
+          }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+            html,
+            body,
+            header,
+            .intro-2 {
+              height: 900px;
+            }
+        }
