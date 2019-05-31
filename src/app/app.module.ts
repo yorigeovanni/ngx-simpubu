@@ -20,6 +20,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 /* ================================================================= NGRX MODULE */
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers, metaReducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 
 /* ================================================================= TEMPLATE MODULE */
@@ -51,9 +52,9 @@ import { NotFoundComponent } from './pages-errors/not-found/not-found.component'
                   AngularFireDatabaseModule,
 
                   //ngRXImport
-                  //StoreModule.forRoot(reducers, { metaReducers }),
-                  //!environment.production ? StoreDevtoolsModule.instrument() : [],
-                  //EffectsModule.forRoot([])
+                  StoreModule.forRoot(reducers, { metaReducers }),
+                  !environment.production ? StoreDevtoolsModule.instrument() : [],
+                  EffectsModule.forRoot([])
   ],
 
 
