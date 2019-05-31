@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   firebase: {
-              apiKey: "AIzaSyBMrfDdbFgjQNV8cIrDkv0pW1DF0snMpQw",
-              authDomain: "portal-dbu.firebaseapp.com",
-              databaseURL: "https://portal-dbu.firebaseio.com",
-              projectId: "portal-dbu",
-              storageBucket: "portal-dbu.appspot.com",
-              messagingSenderId: "839794935414",
-              appId: "1:839794935414:web:1485cfca9cab81ae"
+              apiKey: "AIzaSyAsIefLTyca8gh8tlaAe4fnSSpJxfeFj0s",
+              authDomain: "simpu-bu.firebaseapp.com",
+              databaseURL: "https://simpu-bu.firebaseio.com",
+              projectId: "simpu-bu",
+              storageBucket: "simpu-bu.appspot.com",
+              messagingSenderId: "271104451415",
+              appId: "1:271104451415:web:c7d189bc6a4aaee7"
             }
 };
