@@ -6,10 +6,11 @@ import { NotFoundComponent } from './pages-errors/not-found/not-found.component'
 
 const routes: Routes = [
   	{ path: '', component: WelcomeComponent },
-	{ path: 'peralatan', loadChildren: './peralatan/peralatan.module#PeralatanModule', /*canActivate: [AuthGuard]*/},
-	{ path: 'personil', loadChildren: './personil/personil.module#PersonilModule', /*canActivate: [AuthGuard]*/},
-	{ path: 'satker', loadChildren: './satker/satker.module#SatkerModule', /*canActivate: [AuthGuard]*/},
-	{ path: 'regulasi', loadChildren: './regulasi/regulasi.module#RegulasiModule', /*canActivate: [AuthGuard]*/},
+	{ path: 'peralatan', loadChildren: './peralatan/peralatan.module#PeralatanModule'},
+	{ path: 'personil', loadChildren: './personil/personil.module#PersonilModule'},
+	{ path: 'satker', loadChildren: './satker/satker.module#SatkerModule'},
+	{ path: 'regulasi', loadChildren: './regulasi/regulasi.module#RegulasiModule'},
+	{ path: 'kelolah-akun', loadChildren: './kelola-akun/kelola-akun.module#KelolaAkunModule', /*canActivate: [AuthGuard]*/},
   	{ path: '**', component: NotFoundComponent }
 ];
 

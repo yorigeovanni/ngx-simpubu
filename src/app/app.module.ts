@@ -1,7 +1,6 @@
 /* ================================================================= APP MODULE */
 import { APP_BASE_HREF } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
-import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './app.component';
 
 /* ================================================================= COMMON MODULE */
@@ -42,7 +41,6 @@ import { NotFoundComponent } from './pages-errors/not-found/not-found.component'
   	              MDBBootstrapModulesPro.forRoot(),
                   BrowserModule,
                   BrowserAnimationsModule,
-                  AuthModule,
                   AppRoutingModule,
                   TemplateModule,
                   HttpClientModule,

@@ -16,33 +16,97 @@
       <links>
         <ul class="navbar-nav nav-flex-icons ml-auto">
 
-           
-
-            <li class="nav-item waves-light">
-              <a class="nav-link" routerLink="/peralatan" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-cogs"></i> PERALATAN</a>
+            <li class="nav-item waves-light d-none d-lg-block">
+              <a class="nav-link mt-1" routerLink="/peralatan" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-cogs"></i> PERALATAN</a>
+            </li>
+            <li class="nav-item waves-light d-lg-none">
+                <a class="nav-link mt-1" routerLink="/peralatan" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-2x fa-cogs mr-auto"></i></a>
             </li>
 
-            <li class="nav-item waves-light">
-              <a class="nav-link" routerLink="/personil" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-chalkboard-teacher"></i> PERSONIL</a>
+
+            <li class="nav-item waves-light d-none d-lg-block">
+              <a class="nav-link mt-1" routerLink="/personil" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-chalkboard-teacher"></i> PERSONIL</a>
+            </li>
+            <li class="nav-item waves-light d-lg-none">
+                <a class="nav-link mt-1" routerLink="/personil" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-2x fa-chalkboard-teacher mr-auto"></i></a>
             </li>
 
-            <li class="nav-item waves-light">
-              <a class="nav-link" routerLink="/satker" routerLinkActive="active" mdbWavesEffect><i class="fas fa-city"></i> SATKER</a>
+
+            <li class="nav-item waves-light d-none d-lg-block">
+              <a class="nav-link mt-1" routerLink="/satker" routerLinkActive="active" mdbWavesEffect><i class="fas fa-city"></i> SATKER</a>
+            </li>
+            <li class="nav-item waves-light d-lg-none">
+                <a class="nav-link mt-1" routerLink="/satker" routerLinkActive="active" mdbWavesEffect><i class="fas fa-2x fa-city mr-auto"></i></a>
             </li>
 
-            <li class="nav-item waves-light">
-                <a class="nav-link" routerLink="/regulasi" routerLinkActive="active" mdbWavesEffect><i class="fas fa-balance-scale"></i> REGULASI</a>
+
+            <li class="nav-item waves-light d-none d-lg-block">
+                <a class="nav-link mt-1" routerLink="/regulasi" routerLinkActive="active" mdbWavesEffect><i class="fas fa-balance-scale"></i> REGULASI</a>
+            </li>
+            <li class="nav-item waves-light d-lg-none">
+                <a class="nav-link mt-1" routerLink="/regulasi" routerLinkActive="active" mdbWavesEffect><i class="fas fa-2x fa-balance-scale mr-auto"></i></a>
             </li>
 
-            <li class="nav-item waves-light">
-                <a class="nav-link" routerLink="/master-data" routerLinkActive="active" mdbWavesEffect><i class="fas fa-database"></i> MASTER DATA</a>
+            <li class="nav-item waves-light d-none d-lg-block">
+                <a class="nav-link mt-1" routerLink="/master-data" routerLinkActive="active" mdbWavesEffect><i class="fas fa-database"></i> MASTER DATA</a>
+            </li>
+            <li class="nav-item waves-light d-lg-none">
+                <a class="nav-link mt-1" routerLink="/master-data" routerLinkActive="active" mdbWavesEffect><i class="fas fa-2x fa-database mr-auto"></i></a>
             </li>
 
-           
-
+            <li class="nav-item waves-light text-white  d-none d-lg-block">
+                <button type="button" class="btn btn-sm btn-danger btn-rounded" data-toggle="modal" data-target="#modal-account">
+                  <i class="fas fa-shield-alt"></i> AKUN ANDA
+                </button>
+            </li>
+            <li class="nav-item waves-light text-white d-lg-none">
+                <button type="button" class="btn btn-sm btn-danger btn-rounded mr-auto" data-toggle="modal" data-target="#modal-account">
+                  <i class="fas fa-2x fa-shield-alt"></i>
+                </button>
+            </li>
 
         </ul>
       </links>
   </mdb-navbar>
-
 </header>
+
+
+  
+  <!--Modal: modal-account-->
+  <div class="modal fade right" id="modal-account" tabindex="-1" role="dialog" aria-labelledby="modal-account" aria-hidden="true" data-backdrop="true">
+    <div class="modal-dialog modal-notify modal-info" role="document">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header">
+          <p class="heading">INFORMASI AKUN ANDA</p>
+  
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="white-text">&times;</span>
+          </button>
+        </div>
+  
+        <!--Body-->
+        <div class="modal-body">
+  
+          <div class="row">
+            <div class="col-5">
+              <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(55).jpg"
+                class="img-fluid" alt="">
+            </div>
+  
+            <div class="col-7">
+              <p><strong>NAMA PERSONIL LOGIN</strong></p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit [...]</p>
+              <a class="btn btn-info btn-md" routerLink="/kelola-akun" data-dismiss="modal">KELOLA AKUN</a>
+              <button type="button" class="btn btn-danger btn-md">LOG OUT</button>
+             
+  
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+  <!--Modal: modal-account -->
