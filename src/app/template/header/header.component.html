@@ -47,19 +47,27 @@
                 <a class="nav-link mt-1" routerLink="/regulasi" routerLinkActive="active" mdbWavesEffect><i class="fas fa-2x fa-balance-scale mr-auto"></i></a>
             </li>
 
-            <li class="nav-item waves-light d-none d-lg-block">
+            <li class="nav-item waves-light d-none d-lg-block" *ngIf="isLoggedIn && isAdmin">
                 <a class="nav-link mt-1" routerLink="/master-data" routerLinkActive="active" mdbWavesEffect><i class="fas fa-database"></i> MASTER DATA</a>
             </li>
-            <li class="nav-item waves-light d-lg-none">
+            <li class="nav-item waves-light d-lg-none" *ngIf="isLoggedIn && isAdmin">
                 <a class="nav-link mt-1" routerLink="/master-data" routerLinkActive="active" mdbWavesEffect><i class="fas fa-2x fa-database mr-auto"></i></a>
             </li>
 
-            <li class="nav-item waves-light text-white  d-none d-lg-block">
+
+            <li class="nav-item waves-light d-none d-lg-block" *ngIf="!isLoggedIn">
+                <a class="nav-link mt-1" routerLink="/global-auth/login" routerLinkActive="active" mdbWavesEffect><i class="fas fa-shield-alt"></i> MASUK</a>
+            </li>
+            <li class="nav-item waves-light d-lg-none" *ngIf="!isLoggedIn">
+                <a class="nav-link mt-1" routerLink="/global-auth/login" routerLinkActive="active" mdbWavesEffect><i class="fas fa-2x fa-shield-alt mr-auto"></i></a>
+            </li>
+
+            <li class="nav-item waves-light text-white  d-none d-lg-block" *ngIf="isLoggedIn" >
                 <button type="button" class="btn btn-sm btn-danger btn-rounded" data-toggle="modal" data-target="#modal-account">
                   <i class="fas fa-shield-alt"></i> AKUN ANDA
                 </button>
             </li>
-            <li class="nav-item waves-light text-white d-lg-none">
+            <li class="nav-item waves-light text-white d-lg-none" *ngIf="isLoggedIn">
                 <button type="button" class="btn btn-sm btn-danger btn-rounded mr-auto" data-toggle="modal" data-target="#modal-account">
                   <i class="fas fa-2x fa-shield-alt"></i>
                 </button>
@@ -73,7 +81,7 @@
 
   
   <!--Modal: modal-account-->
-  <div class="modal fade right" id="modal-account" tabindex="-1" role="dialog" aria-labelledby="modal-account" aria-hidden="true" data-backdrop="true">
+  <div class="modal fade right" id="modal-account" tabindex="-1" role="dialog" aria-labelledby="modal-account" aria-hidden="true" data-backdrop="true" *ngIf="isLoggedIn && !isLoading">
     <div class="modal-dialog modal-notify modal-info" role="document">
       <!--Content-->
       <div class="modal-content">
@@ -91,15 +99,14 @@
   
           <div class="row">
             <div class="col-5">
-              <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(55).jpg"
-                class="img-fluid" alt="">
+              <img src="{{ user.photoUrl }}" class="img-fluid" alt="{{ user.displayName }}">
             </div>
   
             <div class="col-7">
-              <p><strong>NAMA PERSONIL LOGIN</strong></p>
+              <p><strong>{{ user.displayName }}</strong></p>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit [...]</p>
-              <a class="btn btn-info btn-md" routerLink="/kelola-akun" data-dismiss="modal">KELOLA AKUN</a>
-              <button type="button" class="btn btn-danger btn-md">LOG OUT</button>
+              <a class="btn btn-info btn-md" routerLink="/kelolah-akun" data-dismiss="modal">KELOLA AKUN</a>
+              <button type="button" class="btn btn-danger btn-md" (click)="onLogout();" data-dismiss="modal">LOG OUT</button>
              
   
             </div>
