@@ -7,7 +7,7 @@ export enum AuthActionTypes {
   UPDATE_PROFILE = '[Auth] Update profile',
   UPDATE_PROFILE_SUCCESS = '[Auth] Update profile success',
 
-  LOGIN_REQUESTED = '[Auth] LOGIN Requested',
+ 
   LOGIN_SUCCESS = '[Auth] LOGIN Success',
   LOGIN_FAILED = '[Auth] LOGIN Failed',
 
@@ -37,11 +37,6 @@ export class SaveUser implements Action {
 }
 
 
-
-export class LoginRequested implements Action {
-  readonly type = AuthActionTypes.LOGIN_REQUESTED;
-  constructor(public payload: { email: string; password: string }) {}
-}
 
 export class LoginSuccess implements Action {
   readonly type = AuthActionTypes.LOGIN_SUCCESS;
@@ -116,7 +111,6 @@ export type AuthAction =
 
   | UpdateProfile
   | UpdateProfileSuccess
-  | LoginRequested
   | LoginSuccess
   | LoginFailed
   | SocialLogin

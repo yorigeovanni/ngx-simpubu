@@ -77,39 +77,6 @@ export class AuthEffects {
   );
 
 
-  @Effect()
-  loginAction$ = this.actions$.pipe(
-    ofType(auth.AuthActionTypes.LOGIN_REQUESTED),
-    map((action: auth.LoginRequested) => action.payload),
-    switchMap(payload =>
-      this.authService.login(payload.email, payload.password).pipe(
-        map((res: any) => {
-          const user = {
-            uid: res.user.uid,
-            displayName: res.user.displayName,
-            email: res.user.email,
-            providerId: res.additionalUserInfo.providerId,
-            photoUrl: res.user.photoURL,
-            isNewUser: res.additionalUserInfo.isNewUser
-          };
-          return new auth.LoginSuccess( {user });
-        }),
-/*         switchMap( (user: any) => {
-          if (user.isNewUser) {
-            return [
-              new auth.LoginSuccess({ user }),
-              new auth.SaveUser( { uid: user.uid, name: user.displayName }),
-              new auth.CheckUserRole( {uid: user.uid })
-            ];
-          } else {
-            return [ new auth.LoginSuccess( {user }), new auth.CheckUserRole({ uid: user.uid })];
-          }
-        }), */
-        tap(() => this.router.navigateByUrl('')),
-        catchError(error => of(new auth.AuthError({ error })))
-      )
-    )
-  );
 
   @Effect()
   loginSuccess$ = this.actions$.pipe(

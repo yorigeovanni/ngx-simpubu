@@ -4,8 +4,7 @@
  <div class="card">
  
      <h5 class="card-header info-color white-text text-center py-4">
-         <strong>MASUK SIMPUBU</strong> - 
-         <button type="button" class="btn btn-primary btn-rounded purple-gradient" data-toggle="modal" data-target="#modalYT">VIDEO PANDUAN</button>
+         <strong>MASUK SIMPUBU</strong>
      </h5>
  
      <!--Card content-->
@@ -13,60 +12,33 @@
         <div *ngIf="error$ | async as error" class="alert alert-danger" role="alert">
             {{ error }}
           </div>
- 
-         <!-- Form -->
-         <form [formGroup]="loginForm" class="text-center" style="color: #757575;">
- 
           
-             <!-- E-mail -->
-             <div class="md-form mt-5">
-                <input mdbValidate [validateSuccess]="false" type="email" id="email" class="form-control" formControlName="email" mdbInput>
-                <label for="email">E-mail</label>
-                <mdb-error *ngIf="email && email.invalid && (email.dirty || email.touched)">Email is required</mdb-error>
-             </div>
- 
-             <!-- Password -->
-             <div class="md-form">
-                <input mdbValidate [validateSuccess]="false" type="password" id="password" class="form-control" formControlName="password" mdbInput>
-                <label for="password">Password</label>
-                <mdb-error *ngIf="password && password.invalid && (password.dirty || password.touched)">Password is required</mdb-error>
-             </div>
- 
- 
-             <!-- Sign up button -->
-             <button mdbBtn color="primary" block="true" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" mdbWavesEffect type="submit" (click)="onLogin()">Log in</button>
- 
-             <!-- Social register -->
-             <p>ATAU ANDA DAPAT MASUK MELALUI SALAH SATU METODE INI</p>
- 
-             <a type="button" class="btn-floating btn-tw">
-                 <i class="fas fa-sms"></i>
-               </a>
- 
-             <a class="btn-floating btn-fb" (click)="onFacebookLogin('facebook')">
-                 <i class="fab fa-facebook-f"> </i>
-               </a>
- 
-              <a class="btn-floating btn-gplus" (click)="onGoogleLogin('google')">
-               <i class="fab fa-google-plus-g"> </i>
+          <p>untuk melanjutkan, silahkan masuk dengan salah satu metode dibawah ini</p>
+
+         <a type="button" class="btn-floating btn-tw">
+             <i class="fas fa-sms"></i>
+           </a>
+
+         <a class="btn-floating btn-fb" (click)="onFacebookLogin('facebook')">
+             <i class="fab fa-facebook-f"> </i>
+           </a>
+
+          <a class="btn-floating btn-gplus" (click)="onGoogleLogin('google')">
+           <i class="fab fa-google-plus-g"> </i>
+         </a>
+        
+         
+
+           <a class="btn-floating btn-dribbble">
+               <i class="fab fa-github"> </i>
              </a>
-            
-             
- 
-               <a class="btn-floating btn-dribbble">
-                   <i class="fab fa-github"> </i>
-                 </a>
- 
- 
-           
-         </form>
-         <!-- Form -->
+
+             <button type="button" class="btn btn-primary btn-rounded purple-gradient" data-toggle="modal" data-target="#modalYT">VIDEO PANDUAN</button>
  
      </div>
  
  </div>
- <!-- Material form register -->
-     <!-- Default form login -->
+
          
          
          <!--Modal: modalYT-->
