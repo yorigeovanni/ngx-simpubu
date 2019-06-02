@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
-import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { Observable, of, defer } from 'rxjs';
 import { map, switchMap, catchError, tap, take } from 'rxjs/operators';
 
-import * as auth from './../store/auth.actions';
+
 import { User } from '../models/user.model';
+import { AuthService } from '../services/auth.service';
 import { GravatarService } from '../../shared/services/gravatar.service';
+
+
+import * as auth from './../store/auth.actions';
+import { Actions, Effect, ofType } from '@ngrx/effects';
+
+
+
 
 @Injectable()
 export class AuthEffects {

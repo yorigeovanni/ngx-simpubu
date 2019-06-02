@@ -29,11 +29,10 @@ export enum AuthActionTypes {
   AUTH_ERROR = '[Auth] Error'
 }
 
-export class RegisterRequested implements Action {
-  readonly type = AuthActionTypes.REGISTER_REQUESTED;
-
+export class RegisterRequested implements Action { readonly type = AuthActionTypes.REGISTER_REQUESTED;
   constructor(public payload: { username: string, email: string; password: string }) {}
 }
+
 
 export class RegisterCompleted implements Action {
   readonly type = AuthActionTypes.REGISTER_COMPLETED;

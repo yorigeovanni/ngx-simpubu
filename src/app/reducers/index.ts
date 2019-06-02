@@ -1,9 +1,12 @@
 import { ActionReducerMap, MetaReducer, ActionReducer, Action } from '@ngrx/store';
 
-import * as fromAuth from '../auth/store/auth.reducer';
-//import * as fromAdmin from '../admin/store/admin.reducer';
+
 import { AuthState } from '../auth/store/auth.state';
 //import { AdminState } from '../admin/store/admin.state';
+
+import * as fromAuth from '../auth/store/auth.reducer';
+//import * as fromAdmin from '../admin/store/admin.reducer';
+
 
 export interface AppState {
   auth: AuthState;
