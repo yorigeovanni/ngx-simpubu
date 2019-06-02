@@ -24,41 +24,7 @@ export class AuthEffects {
     private router: Router,
   ) {}
   
-  /*
-  @Effect()
-  registerAction$ = this.actions$.pipe(
-    ofType(auth.AuthActionTypes.REGISTER_REQUESTED),
-    map((action: auth.RegisterRequested) => action.payload),
-    switchMap(payload =>
-      this.authService.register(payload.email, payload.password).pipe(
-        map((res: any) => {
-          const gravatarUrl = this.gravatarService.getUserGravatar(res.user.email);
-          const user = {
-            uid: res.user.uid,
-            displayName: payload.username || res.user.displayName,
-            email: res.user.email,
-            providerId: res.additionalUserInfo.providerId,
-            photoUrl: res.user.photoURL || gravatarUrl,
-            isNewUser: res.additionalUserInfo.isNewUser,
-            isAdmin: false,
-            isOnline: true
-          };
-          return user;
-        }),
-        switchMap( (user: User) => {
-          return [
-            new auth.RegisterCompleted(),
-            new auth.LoginSuccess({ user }),
-            new auth.UpdateProfile({ displayName: payload.username, photoUrl: user.photoUrl }),
-            new auth.SaveUser( { user })
-          ];
-        }),
-        tap(() => { this.router.navigateByUrl(''); }),
-        catchError(error => of(new auth.AuthError({ error })))
-      )
-    )
-  );
- */
+ 
   @Effect({ dispatch: false })
   saveUser$ = this.actions$.pipe(
     ofType(auth.AuthActionTypes.SAVE_USER),
