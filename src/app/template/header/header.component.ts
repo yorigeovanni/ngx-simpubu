@@ -22,9 +22,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
    // console.log(this.user);
+    
+    console.log(this.isAdmin);
     console.log(this.isLoggedIn);
     console.log(this.isLoading);
-    console.log(this.isAdmin);
   }
 
   onLogout() {
