@@ -7,7 +7,7 @@ import { User } from '../models/user.model';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { AngularFirestore } from '@angular/fire/firestore';
+//import { AngularFirestore } from '@angular/fire/firestore';
 
 // 03. DEFINISI RUANG EKSEKUSI DI APP
 @Injectable({ providedIn: 'root' })
@@ -17,7 +17,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class AuthService {
   constructor( private afAuth: AngularFireAuth, 
                private db: AngularFireDatabase,
-               private firestore: AngularFirestore, ) 
+              // private firestore: AngularFirestore, 
+              ) 
   { }
 
 
