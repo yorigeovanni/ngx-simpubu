@@ -22,12 +22,6 @@ export class AuthService {
   { }
 
 
-  // FUNCTION REGISTRASI
-  register(email: string, password: string) {
-    return from(this.afAuth.auth.createUserWithEmailAndPassword(email, password));
-  }
-
-
   // SIMPAN USER
   saveUser(user: User) {
     const users = this.db.object('users/' + user.uid);
@@ -35,10 +29,6 @@ export class AuthService {
   }
 
 
-  //FUNCTION LOGIN DENGAN FORM
-  login(email: string, password: string) {
-    return from(this.afAuth.auth.signInWithEmailAndPassword(email, password));
-  }
 
 
   // LOGIN DENGAN VENDOR SOSIAL MEDIA
