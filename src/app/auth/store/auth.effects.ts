@@ -6,12 +6,10 @@ import { map, switchMap, catchError, tap, take } from 'rxjs/operators';
 
 import { User } from '../models/user.model';
 import { AuthService } from '../services/auth.service';
-import { GravatarService } from '../../shared/services/gravatar.service';
 
 
 import * as auth from './../store/auth.actions';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-
 
 
 
@@ -20,75 +18,9 @@ export class AuthEffects {
   constructor(
     private actions$: Actions,
     private authService: AuthService,
-    private gravatarService: GravatarService,
     private router: Router,
   ) {}
-  
- 
-  @Effect({ dispatch: false })
-  saveUser$ = this.actions$.pipe(
-    ofType(auth.AuthActionTypes.SAVE_USER),
-    map( (action: auth.SaveUser) => action.payload),
-    switchMap( (payload: any) => this.authService.saveUser(payload.user))
-  );
 
-
-  @Effect({ dispatch: false })
-  updateOnlineStatus$ = this.actions$.pipe(
-    ofType(auth.AuthActionTypes.UPDATE_ONLINE_STATUS),
-    map( (action: auth.UpdateOnlineStatus) => action.payload),
-    switchMap( (payload: any) => this.authService.updateOnlineStatus(payload.uid, payload.status))
-  );
-
-  @Effect()
-  checkUserRole$ = this.actions$.pipe(
-    ofType(auth.AuthActionTypes.CHECK_USER_ROLE),
-    map( (action: auth.CheckUserRole) => action.payload),
-    switchMap( (payload: any) => this.authService.checkUserRole(payload.uid)
-      .pipe(
-        map( (isAdmin: boolean) => {
-          return new auth.UpdateUserRole({ isAdmin });
-        }),
-        catchError( (error: any) => of(new auth.AuthError({ error })))
-      )
-    )
-  );
-
-  @Effect()
-  updateProfile$ = this.actions$.pipe(
-    ofType(auth.AuthActionTypes.UPDATE_PROFILE),
-    map((action: auth.UpdateProfile) => action.payload),
-    switchMap((payload: any) =>
-      this.authService.updateProfile(payload.displayName, payload.photoUrl).pipe(
-        map( () => {
-          const currentUser: any = this.authService.getCurrentUser();
-            const updatedUser: any = {
-              uid: currentUser.uid || null,
-              displayName: currentUser.displayName || null,
-              email: currentUser.email || null,
-              providerId: currentUser.providerData[0].providerId || null,
-              photoUrl: currentUser.photoURL || null
-          };
-          return new auth.UpdateProfileSuccess( { user: updatedUser });
-        }),
-        catchError( (error) => of(new auth.AuthError(error)))
-      )
-    )
-  );
-
-
-
-  @Effect()
-  loginSuccess$ = this.actions$.pipe(
-    ofType(auth.AuthActionTypes.LOGIN_SUCCESS),
-    map( (action: auth.SaveUser) => action.payload),
-    switchMap( (payload: any) => {
-        return [
-          new auth.UpdateOnlineStatus({ uid: payload.user.uid, status: true }),
-          new auth.CheckUserRole( {uid: payload.user.uid })
-        ];
-    })
-  );
 
   @Effect()
   socialLogin$ = this.actions$.pipe(
@@ -126,22 +58,20 @@ export class AuthEffects {
     )
   );
 
+
   @Effect()
-  logoutAction$ = this.actions$.pipe(
-    ofType(auth.AuthActionTypes.LOGOUT_REQUESTED),
-    map( (action: auth.LogoutRequested) => action.payload),
-    switchMap((payload: any) => this.authService.logout(payload.user.uid)
-      .pipe(
-        map(() => (new auth.LogoutCompleted())),
-        tap(() => this.router.navigateByUrl('')),
-        catchError(error => {
-          return of(new auth.AuthError({ error }));
-        }
-        )
-      )
-    )
+  loginSuccess$ = this.actions$.pipe(
+    ofType(auth.AuthActionTypes.LOGIN_SUCCESS),
+    map( (action: auth.SaveUser) => action.payload),
+    switchMap( (payload: any) => {
+        return [
+          new auth.UpdateOnlineStatus({ uid: payload.user.uid, status: true }),
+          new auth.CheckUserRole( {uid: payload.user.uid })
+        ];
+    })
   );
 
+  
   @Effect()
   getUser$ = this.actions$.pipe(
     ofType(auth.AuthActionTypes.GET_USER),
@@ -166,6 +96,77 @@ export class AuthEffects {
       )
     )
   );
+
+  
+  @Effect()
+  checkUserRole$ = this.actions$.pipe(
+    ofType(auth.AuthActionTypes.CHECK_USER_ROLE),
+    map( (action: auth.CheckUserRole) => action.payload),
+    switchMap( (payload: any) => this.authService.checkUserRole(payload.uid)
+      .pipe(
+        map( (isAdmin: boolean) => {
+          return new auth.UpdateUserRole({ isAdmin });
+        }),
+        catchError( (error: any) => of(new auth.AuthError({ error })))
+      )
+    )
+  );
+
+  
+  @Effect({ dispatch: false })
+  updateOnlineStatus$ = this.actions$.pipe(
+    ofType(auth.AuthActionTypes.UPDATE_ONLINE_STATUS),
+    map( (action: auth.UpdateOnlineStatus) => action.payload),
+    switchMap( (payload: any) => this.authService.updateOnlineStatus(payload.uid, payload.status))
+  );
+
+
+  @Effect()
+  updateProfile$ = this.actions$.pipe(
+    ofType(auth.AuthActionTypes.UPDATE_PROFILE),
+    map((action: auth.UpdateProfile) => action.payload),
+    switchMap((payload: any) =>
+      this.authService.updateProfile(payload.displayName, payload.photoUrl).pipe(
+        map( () => {
+          const currentUser: any = this.authService.getCurrentUser();
+            const updatedUser: any = {
+              uid: currentUser.uid || null,
+              displayName: currentUser.displayName || null,
+              email: currentUser.email || null,
+              providerId: currentUser.providerData[0].providerId || null,
+              photoUrl: currentUser.photoURL || null
+          };
+          return new auth.UpdateProfileSuccess( { user: updatedUser });
+        }),
+        catchError( (error) => of(new auth.AuthError(error)))
+      )
+    )
+  );
+
+  
+  @Effect({ dispatch: false })
+  saveUser$ = this.actions$.pipe(
+    ofType(auth.AuthActionTypes.SAVE_USER),
+    map( (action: auth.SaveUser) => action.payload),
+    switchMap( (payload: any) => this.authService.saveUser(payload.user))
+  );
+
+  @Effect()
+  logoutAction$ = this.actions$.pipe(
+    ofType(auth.AuthActionTypes.LOGOUT_REQUESTED),
+    map( (action: auth.LogoutRequested) => action.payload),
+    switchMap((payload: any) => this.authService.logout(payload.user.uid)
+      .pipe(
+        map(() => (new auth.LogoutCompleted())),
+        tap(() => this.router.navigateByUrl('')),
+        catchError(error => {
+          return of(new auth.AuthError({ error }));
+        }
+        )
+      )
+    )
+  );
+
 
   @Effect()
   init$: Observable<any> = defer(() => {
