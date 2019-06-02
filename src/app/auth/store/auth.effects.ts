@@ -46,10 +46,15 @@ export class AuthEffects {
               new auth.SaveUser({ user }),
               new auth.CheckUserRole({ uid: user.uid })
             ];
-          } else {
-            return [new auth.LoginSuccess({ user }), new auth.CheckUserRole({ uid: user.uid })];
+          } 
+          else {
+            return [
+              new auth.LoginSuccess({ user }), 
+              new auth.CheckUserRole({ uid: user.uid })
+            ];
           }
         }),
+
         tap(() => this.router.navigateByUrl('')),
         catchError(error => {
           return of(new auth.AuthError({ error }));
@@ -151,6 +156,7 @@ export class AuthEffects {
     switchMap( (payload: any) => this.authService.saveUser(payload.user))
   );
 
+  
   @Effect()
   logoutAction$ = this.actions$.pipe(
     ofType(auth.AuthActionTypes.LOGOUT_REQUESTED),

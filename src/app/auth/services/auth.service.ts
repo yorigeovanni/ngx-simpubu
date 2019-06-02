@@ -7,7 +7,7 @@ import { User } from '../models/user.model';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 // 03. DEFINISI RUANG EKSEKUSI DI APP
 @Injectable({ providedIn: 'root' })
@@ -22,16 +22,7 @@ export class AuthService {
   { }
 
 
-  // SIMPAN USER
-  saveUser(user: User) {
-    const users = this.db.object('users/' + user.uid);
-    return users.set(user);
-  }
-
-
-
-
-  // LOGIN DENGAN VENDOR SOSIAL MEDIA
+  // 05. LOGIN DENGAN VENDOR SOSIAL MEDIA
   socialLogin(authProvider: string) {
     let provider: any;
     if (authProvider === 'google') {
@@ -45,24 +36,40 @@ export class AuthService {
     if (authProvider === 'twitter') {
       provider = new firebase.auth.TwitterAuthProvider();
     }
-
-    
     return from(this.afAuth.auth.signInWithPopup(provider));
   }
 
 
+  // JIKA USER BARU PERTAMA KALI LOGIN MENGGUNAKAN SOSMED - SAVE USER
+  saveUser(user: User) {
+    const userRef: AngularFirestoreDocument<any> = this.firestore.doc('users/' + user.uid);
+    user.isAdmin = false;
+    user.isAdminSatker = false;
+    user.isTeknisi = false;
+    user.isDBU = false;
+    user.isBTP = false;
+    user.isBKP = false;
+    user.isInspekturPeralatan = false;
+    user.isInspekturPersonil = false;
+    user.isInspekturSatker = false;
+    user.isOnline = true;
+    // set user to NOT new user (supaya tidak overwrite data diatas)
+    user.isNewUser = false;
+    return userRef.set(user); // tidak pake merge karena akan hilang semua data
+  }
+
+
+
   //CHECK JIKA USER ADALAH ADMIN
   checkUserRole(uid: string) {
-    return this.db.object('admins/' + uid).valueChanges();
+    return this.firestore.collection("users").doc(uid).valueChanges();
+    //return this.db.object('admins/' + uid).valueChanges();
   }
 
   
   // FUNCTION UPDATE ONLINE STATUS - DIGUNAKAN PADA SAAT LOGIN DAN LOGOUT
   updateOnlineStatus(uid: string, status: boolean) {
-    if (status) {
-      this.db.database.ref().child('users/' + uid).onDisconnect().update( { isOnline: false });
-    }
-    return from(this.db.object('users/' + uid).update({ isOnline: status }));
+    return from(this.firestore.collection("users").doc(uid).update({ isOnline: status }));
   }
 
 
