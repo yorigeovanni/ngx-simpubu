@@ -2,9 +2,9 @@ import { Action } from '@ngrx/store';
 import { User } from '../models/user.model';
 
 export enum AuthActionTypes {
-  REGISTER_REQUESTED = '[Auth] REGISTER Requested',
-  REGISTER_COMPLETED = '[Auth] REGISTER Completed',
-  REGISTER_FAILED = '[Auth] REGISTER Failed',
+//  REGISTER_REQUESTED = '[Auth] REGISTER Requested',
+//  REGISTER_COMPLETED = '[Auth] REGISTER Completed',
+//  REGISTER_FAILED = '[Auth] REGISTER Failed',
 
   UPDATE_PROFILE = '[Auth] Update profile',
   UPDATE_PROFILE_SUCCESS = '[Auth] Update profile success',
@@ -32,6 +32,7 @@ export enum AuthActionTypes {
 
 }
 
+/*
 export class RegisterRequested implements Action { readonly type = AuthActionTypes.REGISTER_REQUESTED;
   constructor(public payload: { username: string, email: string; password: string }) {}
 }
@@ -46,7 +47,7 @@ export class RegisterFailed implements Action {
   constructor(public payload: { error: any }) {}
 }
 
-
+*/
 export class SaveUser implements Action {
   readonly type = AuthActionTypes.SAVE_USER;
   constructor(public payload: { user: User }) {}
@@ -129,9 +130,9 @@ export class AuthError implements Action {
 
 
 export type AuthAction =
-  | RegisterRequested
-  | RegisterCompleted
-  | RegisterFailed
+  //| RegisterRequested
+  //| RegisterCompleted
+ // | RegisterFailed
   | UpdateProfile
   | UpdateProfileSuccess
   | LoginRequested

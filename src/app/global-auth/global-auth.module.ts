@@ -3,13 +3,11 @@ import { AuthModule } from './../auth/auth.module';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { RessetPasswordComponent } from './resset-password/resset-password.component';
+
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, RessetPasswordComponent],
+  declarations: [LoginComponent],
   imports: [
     CommonModule,
     GlobalAuthRoutingModule,

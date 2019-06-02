@@ -23,7 +23,8 @@ export class AuthEffects {
     private gravatarService: GravatarService,
     private router: Router,
   ) {}
-
+  
+  /*
   @Effect()
   registerAction$ = this.actions$.pipe(
     ofType(auth.AuthActionTypes.REGISTER_REQUESTED),
@@ -57,7 +58,7 @@ export class AuthEffects {
       )
     )
   );
-
+ */
   @Effect({ dispatch: false })
   saveUser$ = this.actions$.pipe(
     ofType(auth.AuthActionTypes.SAVE_USER),
@@ -65,7 +66,7 @@ export class AuthEffects {
     switchMap( (payload: any) => this.authService.saveUser(payload.user))
   );
 
-  
+
   @Effect({ dispatch: false })
   updateOnlineStatus$ = this.actions$.pipe(
     ofType(auth.AuthActionTypes.UPDATE_ONLINE_STATUS),

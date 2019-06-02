@@ -4,7 +4,8 @@ import { StoreModule } from '@ngrx/store';
 import * as fromAuth from './store/auth.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './store/auth.effects';
-import { RegisterComponent } from './components/register/register.component';
+
+
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
@@ -21,8 +22,8 @@ import { RouterModule } from '@angular/router';
     StoreModule.forFeature('auth', fromAuth.authReducer),
     EffectsModule.forFeature([AuthEffects])
   ],
-  declarations: [RegisterComponent, LoginComponent],
-  exports: [RegisterComponent, LoginComponent],
+  declarations: [ LoginComponent],
+  exports: [ LoginComponent],
   providers: [AuthService]
 })
 
