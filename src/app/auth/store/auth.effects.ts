@@ -65,6 +65,7 @@ export class AuthEffects {
     switchMap( (payload: any) => this.authService.saveUser(payload.user))
   );
 
+  
   @Effect({ dispatch: false })
   updateOnlineStatus$ = this.actions$.pipe(
     ofType(auth.AuthActionTypes.UPDATE_ONLINE_STATUS),

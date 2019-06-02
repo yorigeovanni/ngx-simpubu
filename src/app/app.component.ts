@@ -27,12 +27,14 @@ export class AppComponent  implements OnInit, AfterViewInit {
 
   constructor(private mdbSpinningPreloader: MDBSpinningPreloader, private store: Store<AppState>) {}
 
+
   ngOnInit() {
     this.user$ = this.store.select(getUser);
     this.isLoggedIn$ = this.store.select(getIsLoggedIn);
     this.isLoading$ = this.store.select(getIsLoading);
     this.isAdmin$ = this.store.select(getIsAdmin);
-    console.log(this.user$);
+
+    
   }
 
   ngAfterViewInit() {

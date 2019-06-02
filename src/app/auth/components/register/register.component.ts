@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AppState } from '../../../reducers/index';
-import { Store, select } from '@ngrx/store';
-import * as actions from './../../store/auth.actions';
-import { getError } from '../../store/auth.selectors';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+import { Store, select } from '@ngrx/store';
+import { AppState } from '../../../reducers/index';
+import * as actions from './../../store/auth.actions';
+import { getError } from '../../store/auth.selectors';
+
 
 @Component({
   selector: 'app-register',

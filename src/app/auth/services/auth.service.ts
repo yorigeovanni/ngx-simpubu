@@ -55,6 +55,8 @@ export class AuthService {
     if (authProvider === 'twitter') {
       provider = new firebase.auth.TwitterAuthProvider();
     }
+
+    
     return from(this.afAuth.auth.signInWithPopup(provider));
   }
 
