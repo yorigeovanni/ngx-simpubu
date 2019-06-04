@@ -23,10 +23,25 @@ export function authReducer(state = authInitialState, action: AuthAction): AuthS
       
     });}
 
-    
+
     case AuthActionTypes.LOGIN_FAILED: { return Object.assign({}, state, { user: null, isLoading: false, isLoggedIn: false });}
+
+    
     case AuthActionTypes.AUTH_ERROR: { return Object.assign({}, state, { error: action.payload.error });}
-    case AuthActionTypes.LOGOUT_COMPLETED: { return Object.assign({}, state, { user: null, isLoading: false, isLoggedIn: false }); }
+
+
+    case AuthActionTypes.LOGOUT_COMPLETED: { return Object.assign({}, state, {
+      user: null,
+      isLoading: false,
+      isLoggedIn: false,
+
+      isAdmin: false,
+     
+
+
+     });}
+
+
     default: return state; 
   }
 

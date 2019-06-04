@@ -76,7 +76,9 @@ export class UpdateProfileSuccess implements Action {
 
 export class LogoutRequested implements Action {
   readonly type = AuthActionTypes.LOGOUT_REQUESTED;
-  constructor(public payload: { user: User }) {}
+  constructor(public payload: {
+     user: User, 
+  }) {}
 }
 
 export class LogoutCompleted implements Action {
