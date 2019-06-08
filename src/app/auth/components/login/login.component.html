@@ -14,8 +14,9 @@
           </div>
           
           <p class="h4 mb-4 mt-3 text-primary">PILIH METODE MASUK</p>
+          
 
-          <button mdbBtn type="button" color="primary" size="sm" mdbWavesEffect (click)="onPhoneLogin('phone')">
+          <button mdbBtn type="button" color="primary" size="sm" mdbWavesEffect [routerLinkActive]="['active']" [routerLink]="['../login-phone']">
               <mdb-icon fas icon="fas fa-sms" class="mr-1"></mdb-icon>melalui Ponsel
           </button>
 

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 
 import { LoginComponent } from './../auth/components/login/login.component';
+import { PhoneComponent } from './../auth/components/phone/phone.component';
 
 import {PeralatanComponent} from './peralatan.component';
 import {WelcomeComponent} from './welcome/welcome.component';
@@ -34,6 +35,7 @@ const routes: Routes = [
         {path : 'kalibrasi', component : KalibrasiComponent, canActivate: [AuthGuard]},
         {path : 'verifikasi', component : VerifikasiComponent, canActivate: [AuthGuard]},
         {path : 'login', component : LoginComponent,},
+        {path : 'login-phone', component : PhoneComponent,},
         { path: '**', component: NotFoundComponent }
 
       ],

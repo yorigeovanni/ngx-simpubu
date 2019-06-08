@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+
 import { Store, select } from '@ngrx/store';
 import { AppState } from '../../../reducers/index';
 import * as actions from './../../store/auth.actions';
@@ -15,7 +18,12 @@ export class LoginComponent implements OnInit {
 
   error$: Observable<string | null>;
 
-  constructor(private store: Store<AppState>) { }
+  constructor(
+    private store: Store<AppState>,
+    private router: Router,
+    ) 
+    
+    { }
 
   ngOnInit() {
   
@@ -33,6 +41,10 @@ export class LoginComponent implements OnInit {
       );
   }
 
+
+  onPhoneLogin(){
+    this.router.navigateByUrl('./login-phone');
+  }
 
 
   onGoogleLogin(authProvider: string) {

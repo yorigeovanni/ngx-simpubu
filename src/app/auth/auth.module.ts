@@ -12,6 +12,7 @@ import * as fromAuth from './store/auth.reducer';
 
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './store/auth.effects';
+import { PhoneComponent } from './components/phone/phone.component';
 
 
 
@@ -27,8 +28,8 @@ import { AuthEffects } from './store/auth.effects';
     EffectsModule.forFeature([AuthEffects]),
   ],
 
-  declarations: [ LoginComponent, ],
-  exports: [ LoginComponent, ],
+  declarations: [ LoginComponent, PhoneComponent, ],
+  exports: [ LoginComponent, PhoneComponent, ],
   providers: [AuthService]
 })
 

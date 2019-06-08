@@ -9,7 +9,8 @@ export class PeralatanComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
+  
 
 }
