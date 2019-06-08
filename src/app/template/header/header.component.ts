@@ -15,13 +15,14 @@ export class HeaderComponent implements OnInit {
   @Input() isLoggedIn: boolean;
   @Input() isLoading: boolean;
   @Input() isAdmin: boolean;
+  @Input() connectionStatus: boolean;
 
   @Output() logout = new EventEmitter<User>();
 
   constructor() { }
 
   ngOnInit() {
-   // console.log(this.user);
+    console.log(this.connectionStatus);
     
     console.log(this.isAdmin);
     console.log(this.isLoggedIn);

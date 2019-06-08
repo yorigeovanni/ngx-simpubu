@@ -9,21 +9,61 @@
  
      <!--Card content-->
      <div class="card-body px-lg-5 pt-0">
-        <div *ngIf="error$ | async as error" class="alert alert-danger" role="alert">
+        
+
+          <p class="h4 mb-4 mt-3 text-primary" *ngIf="!(windowRef.confirmationResult)">MASUK MELALUI PONSEL</p>
+          <div *ngIf="error$ | async as error" class="alert alert-danger" role="alert">
             {{ error }}
           </div>
+          <form [formGroup]="loginPhoneForm " *ngIf="!(windowRef.confirmationResult)">
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">+62 </span>
+              </div>
+                <input mdbInput mdbValidate type="text" id="area" class="form-control" formControlName="area" required minlength="3" maxlength="3">
+                <mdb-error *ngIf="area.invalid && (area.dirty || area.touched)"></mdb-error>
+                
+                <input mdbValidate [validateSuccess]="false" type="text" id="prefix" class="form-control" formControlName="prefix" mdbInput required minlength="4" maxlength="4">
+                <mdb-error *ngIf="prefix && prefix.invalid && prefix.errors && prefix.errors.required && (prefix.dirty || prefix.touched)"></mdb-error>
+                <mdb-error *ngIf="prefix && prefix.invalid && prefix.errors && prefix.errors.minlength && (prefix.dirty || prefix.touched)"></mdb-error>
+
+                <input mdbValidate [validateSuccess]="false" type="text" id="line" class="form-control" formControlName="line" mdbInput required minlength="3" maxlength="4">
+                <mdb-error *ngIf="line && line.invalid && line.errors && line.errors.required && (line.dirty || line.touched)"></mdb-error>
+                <mdb-error *ngIf="line && line.invalid && line.errors && line.errors.minlength && (line.dirty || line.touched)"></mdb-error>
+            
+            </div>
+            
+
+            <!-- Sign in button -->
+            <button mdbBtn type="button" color="danger" size="sm" mdbWavesEffect (click)="onPhoneLogin()">
+              MINTA KODE LOGIN
+            </button>
+            <button mdbBtn type="button" color="primary" size="sm" mdbWavesEffect [routerLinkActive]="['active']" [routerLink]="['../login']">
+             BATAL
+            </button>
+          </form>
+          <div id="recaptcha-container"></div>
+
+          <div *ngIf="windowRef.confirmationResult">
+              <p class="h4 mb-4 mt-3 text-primary">KONFIRMASI KODE MASUK</p>
+
+              <input mdbInput mdbValidate type="text" id="code" class="form-control mt-3" name="code" [(ngModel)]="verificationCode" required>
+                <mdb-error *ngIf="area.invalid && (area.dirty || area.touched)"></mdb-error>
+              
+                <button mdbBtn type="button" color="primary" size="sm" mdbWavesEffect (click)="verifyLoginCode()">
+                    VERIFIKASI KODE
+                </button>
+                <button mdbBtn type="button" color="warning" size="sm" mdbWavesEffect (click)="onPhoneLogin()">
+                    RESEND KODE
+                </button>
+
+             
+            </div>
+      
           
-          <p class="h4 mb-4 mt-3 text-primary">MASUK MELALUI PONSEL</p>
 
-          <button mdbBtn type="button" color="danger" size="sm" mdbWavesEffect>
-            <mdb-icon fas icon="fas fa-sms" class="mr-1"></mdb-icon>SUBMIT NO HP
-        </button>
-        
-          <hr>
 
-          <button mdbBtn type="button" color="primary" size="sm" mdbWavesEffect [routerLinkActive]="['active']" [routerLink]="['../login']">
-            <mdb-icon fas icon="fas fa-sms" class="mr-1"></mdb-icon>metode masuk lainnya
-          </button>
+          
 
        
      </div>

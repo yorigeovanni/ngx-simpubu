@@ -6,11 +6,13 @@
       </mdb-navbar-brand>
 
       <a class="navbar-brand ml-3 mt-0 d-none d-lg-block" routerLink="/">
-      <strong>PORTAL - DJPU<br><span class="font-weight-bold">DIREKTORAT BANDAR UDARA</span></strong>
+      <strong>PORTAL - DJPU </strong> <span *ngIf="connectionStatus" style="font-size: 10px"><i class="fas fa-network-wired ml-2"></i> Connected</span><span *ngIf="!connectionStatus" style="font-size: 10px"><i class="fas fa-network-wired ml-2 text-danger"></i> Lost Connection</span> 
+        <br>
+        <strong><span class="font-weight-bold">DIREKTORAT BANDAR UDARA</span></strong> 
       </a>
 
       <a class="navbar-brand mr-auto mt-0 d-lg-none" routerLink="/">
-      <strong><span class="font-weight-bold">SIMPUBU-DBU</span></strong>
+      <strong><span class="font-weight-bold">SIMPUBU-DBU</span></strong> <span *ngIf="connectionStatus" style="font-size: 10px"><i class="fas fa-network-wired ml-2"></i> Connected</span><span *ngIf="!connectionStatus" style="font-size: 10px"><i class="fas fa-network-wired ml-2 text-danger"></i> Lost Connection</span>
       </a> 
 
       <links>

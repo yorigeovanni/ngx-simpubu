@@ -1,3 +1,9 @@
+/* ================================================================= FIREBASE CORE PENTING */
+import { environment } from '../environments/environment';
+import * as firebase from 'firebase/app';
+firebase.initializeApp(environment.firebase);
+
+
 /* ================================================================= APP MODULE */
 import { APP_BASE_HREF } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +17,6 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 /* ================================================================= FIREBASE MODULE */
-import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -30,6 +35,9 @@ import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 import { MDBSpinningPreloader } from 'ng-uikit-pro-standard';
 import { TemplateModule } from './template/template.module';
 import { NotFoundComponent } from './pages-errors/not-found/not-found.component';
+
+
+
 
 
 @NgModule({
