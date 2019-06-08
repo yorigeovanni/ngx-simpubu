@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, AfterViewInit } from '@angular/core';
 import { User } from './../../auth/models/user.model';
 
 import * as $ from 'jquery';
@@ -10,9 +10,7 @@ import * as firebase from 'firebase/app';
   styleUrls: ['./header.component.scss']
 })
 
-
-
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
 
   @Input() user: User;
   @Input() isLoggedIn: boolean;
@@ -25,17 +23,23 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.isAdmin);
-    console.log(this.isLoggedIn);
-    console.log(this.isLoading);
+    
+  }
+
+  ngAfterViewInit() {
+    $(".online-span").hide();
+    $(".offline-span").hide();
 
     let connectedRef = firebase.database().ref(".info/connected");
       connectedRef.on("value", function(snap) {
         if (snap.val() === true) {
-          console.log($(''));
-          console.log('Online Mode...');
+          $(".online-span").show();
+          $(".offline-span").hide();
+         // console.log('Online Mode...');
         } else {
-          console.log('Offline Mode...');
+          $(".online-span").hide();
+          $(".offline-span").show();
+         // console.log('Offline Mode...');
         }
       });
   }
