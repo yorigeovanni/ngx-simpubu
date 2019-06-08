@@ -1,9 +1,9 @@
 import * as $ from 'jquery';
 import {MDBSpinningPreloader} from 'ng-uikit-pro-standard';
 
-import { Component, OnInit , AfterViewInit, OnDestroy } from '@angular/core';
-import {fromEvent, Observable, Subscription } from 'rxjs';
-import * as firebase from 'firebase/app';
+import { Component, OnInit , AfterViewInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
 
 import { Store } from '@ngrx/store';
 import { AppState } from './reducers';
@@ -18,7 +18,7 @@ import { getUser, getIsLoggedIn, getIsLoading, getIsAdmin, getIsExist } from './
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent  implements OnInit, AfterViewInit, OnDestroy {
+export class AppComponent  implements OnInit, AfterViewInit {
 
   title = 'SIMPUBU - DIREKTORAT BANDAR UDARA';
   user$: Observable<User | null>;
@@ -28,13 +28,7 @@ export class AppComponent  implements OnInit, AfterViewInit, OnDestroy {
   isAdmin$: Observable<boolean>;
 
 
-  //OFFLINE - ONLINE DETECTION
-  onlineEvent: Observable<Event>;
-  offlineEvent: Observable<Event>;
-  subscriptions: Subscription[] = [];
-  connectionStatusMessage: string;
-  connectionStatus: boolean = true;
-
+  
 
   constructor(
     private mdbSpinningPreloader: MDBSpinningPreloader, 
@@ -50,30 +44,7 @@ export class AppComponent  implements OnInit, AfterViewInit, OnDestroy {
     this.isLoading$ = this.store.select(getIsLoading);
     this.isAdmin$ = this.store.select(getIsAdmin);
 
-    this.onlineEvent = fromEvent(window, 'online');
-    this.offlineEvent = fromEvent(window, 'offline');
-
-    this.subscriptions.push(this.onlineEvent.subscribe(e => {
-      this.connectionStatusMessage = 'anda terhubung ke jaringan internet';
-      this.connectionStatus = true;
-      console.log('Online...');
-    }));
-
-    this.subscriptions.push(this.offlineEvent.subscribe(e => {
-      this.connectionStatusMessage = 'anda tidak terhubung ke jaringan internet';
-      this.connectionStatus = false;
-      console.log('Offline...');
-    }));
-
-
-    let connectedRef = firebase.database().ref(".info/connected");
-      connectedRef.on("value", function(snap) {
-        if (snap.val() === true) {
-          alert("connected");
-        } else {
-          alert("not connected");
-        }
-      });
+    
   }
 
   ngAfterViewInit() {
@@ -84,8 +55,6 @@ export class AppComponent  implements OnInit, AfterViewInit, OnDestroy {
     this.store.dispatch(new fromAuth.LogoutRequested( { user }));
   }
 
-  ngOnDestroy(): void {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe());
-  }
+
 
 }
