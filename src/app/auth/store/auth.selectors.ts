@@ -17,5 +17,6 @@ export const getIsInspekturPersonil = createSelector( getAuthState, auth => auth
 export const getIsInspekturSatker = createSelector( getAuthState, auth => auth.isInspekturSatker);
 
 export const getIsLoggedIn = createSelector( getAuthState, auth => auth.isLoggedIn );
+export const getIsExist = createSelector( getAuthState, auth => auth.isExist );
 export const getIsLoading = createSelector( getAuthState, auth => auth.isLoading );
 export const getError = createSelector( getAuthState, auth => auth.error);

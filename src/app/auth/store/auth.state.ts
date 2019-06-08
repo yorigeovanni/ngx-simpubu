@@ -15,6 +15,7 @@ export interface AuthState {
   isInspekturSatker: boolean;
 
   isLoggedIn: boolean;
+  isExist: boolean;
   isLoading: boolean;
   error: any;
 }
@@ -35,6 +36,7 @@ export const authInitialState: AuthState = {
   isInspekturSatker: false,
 
   isLoggedIn: false,
+  isExist: false,
   isLoading: true,
   error: null
 };

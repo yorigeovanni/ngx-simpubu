@@ -10,8 +10,8 @@ import { LoginComponent } from './components/login/login.component';
 import { StoreModule } from '@ngrx/store';
 import * as fromAuth from './store/auth.reducer';
 
-//import { EffectsModule } from '@ngrx/effects';
-//import { AuthEffects } from './store/auth.effects';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './store/auth.effects';
 
 
 
@@ -24,7 +24,7 @@ import * as fromAuth from './store/auth.reducer';
     RouterModule,
     MDBBootstrapModulesPro,
     StoreModule.forFeature('auth', fromAuth.authReducer),
-   // EffectsModule.forFeature([AuthEffects]),
+    EffectsModule.forFeature([AuthEffects]),
   ],
 
   declarations: [ LoginComponent, ],

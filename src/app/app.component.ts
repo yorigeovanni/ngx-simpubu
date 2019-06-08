@@ -9,7 +9,7 @@ import { AppState } from './reducers';
 import * as fromAuth from './auth/store/auth.actions';
 
 import { User } from './auth/models/user.model';
-import { getUser, getIsLoggedIn, getIsLoading, getIsAdmin } from './auth/store/auth.selectors';
+import { getUser, getIsLoggedIn, getIsLoading, getIsAdmin, getIsExist } from './auth/store/auth.selectors';
 
 
 @Component({
@@ -22,6 +22,8 @@ export class AppComponent  implements OnInit, AfterViewInit {
 
   user$: Observable<User | null>;
   isLoggedIn$: Observable<boolean>;
+  isExist$: Observable<boolean>;
+
   isLoading$: Observable<boolean>;
   isAdmin$: Observable<boolean>;
 
@@ -31,6 +33,8 @@ export class AppComponent  implements OnInit, AfterViewInit {
   ngOnInit() {
     this.user$ = this.store.select(getUser);
     this.isLoggedIn$ = this.store.select(getIsLoggedIn);
+    this.isExist$ = this.store.select(getIsExist);
+
     this.isLoading$ = this.store.select(getIsLoading);
     this.isAdmin$ = this.store.select(getIsAdmin);
 

@@ -1,7 +1,7 @@
 
 <section class="ml-5 mr-5">
   <!-- Material form register -->
- <div class="card">
+ <div class="card text-center">
  
      <h5 class="card-header info-color white-text text-center py-4">
          <strong>MASUK SIMPUBU</strong>
@@ -13,27 +13,37 @@
             {{ error }}
           </div>
           
-          <p>untuk melanjutkan, silahkan masuk dengan salah satu metode dibawah ini</p>
+          <p class="h4 mb-4 mt-3 text-primary">PILIH METODE MASUK</p>
 
-         <a type="button" class="btn-floating btn-tw">
-             <i class="fas fa-sms"></i>
-           </a>
+          <button mdbBtn type="button" color="primary" size="sm" mdbWavesEffect (click)="onPhoneLogin('phone')">
+              <mdb-icon fas icon="fas fa-sms" class="mr-1"></mdb-icon>melalui Ponsel
+          </button>
 
-         <a class="btn-floating btn-fb" (click)="onFacebookLogin('facebook')">
-             <i class="fab fa-facebook-f"> </i>
-           </a>
+          <button mdbBtn type="button" color="primary" size="sm" mdbWavesEffect (click)="onFacebookLogin('facebook')">
+              <mdb-icon fab icon="fab fa-facebook-f" class="mr-1"></mdb-icon>melalui Facebook
+          </button>
 
-          <a class="btn-floating btn-gplus" (click)="onGoogleLogin('google')">
-           <i class="fab fa-google-plus-g"> </i>
-         </a>
-        
+          <button mdbBtn type="button" color="primary" size="sm" mdbWavesEffect (click)="onGoogleLogin('google')">
+              <mdb-icon fab icon="fab fa-google-plus-g" class="mr-1"></mdb-icon>melalui Google
+          </button>
+
+          <button mdbBtn type="button" color="primary" size="sm" mdbWavesEffect>
+              <mdb-icon fab icon="fab fa-yahoo" class="mr-1"></mdb-icon>melalui Yahoo
+          </button>
+
+          <button mdbBtn type="button" color="primary" size="sm" mdbWavesEffect>
+              <mdb-icon fab icon="fab fa-github" class="mr-1"></mdb-icon>melalui Github
+          </button>
+
+          <button mdbBtn type="button" color="primary" size="sm" mdbWavesEffect>
+              <mdb-icon fab icon="fab fa-microsoft" class="mr-1"></mdb-icon>melalui microsoft
+          </button>
+
+          <hr>
+
          
 
-           <a class="btn-floating btn-dribbble">
-               <i class="fab fa-github"> </i>
-             </a>
-
-             <button type="button" class="btn btn-primary btn-rounded purple-gradient" data-toggle="modal" data-target="#modalYT">VIDEO PANDUAN</button>
+             <button type="button" class="btn btn-primary btn-rounded purple-gradient btn-sm text-center" data-toggle="modal" data-target="#modalYT">VIDEO PANDUAN</button>
  
      </div>
  

@@ -25,6 +25,19 @@ export class AuthService {
   // 05. LOGIN DENGAN VENDOR SOSIAL MEDIA
   socialLogin(authProvider: string) {
     let provider: any;
+
+    if (authProvider === 'phone') {
+      console.log('login with phone');
+      provider = new firebase.auth.RecaptchaVerifier('sign-in-button', {
+        'size': 'invisible',
+        'callback': function(response) {
+          // reCAPTCHA solved, allow signInWithPhoneNumber.
+          //onSignInSubmit();
+          console.log('login phone');
+        }
+      });
+    }
+
     if (authProvider === 'google') {
       provider = new firebase.auth.GoogleAuthProvider();
     }
