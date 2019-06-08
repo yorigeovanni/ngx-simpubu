@@ -42,10 +42,6 @@ export class LoginComponent implements OnInit {
   }
 
 
-  onPhoneLogin(){
-    this.router.navigateByUrl('./login-phone');
-  }
-
 
   onGoogleLogin(authProvider: string) {
     this.store.dispatch(new actions.SocialLogin({ authProvider }));

@@ -4,6 +4,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { AuthService } from './services/auth.service';
+import { WindowService } from './services/window.service';
+
 import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 import { LoginComponent } from './components/login/login.component';
 
@@ -30,7 +32,7 @@ import { PhoneComponent } from './components/phone/phone.component';
 
   declarations: [ LoginComponent, PhoneComponent, ],
   exports: [ LoginComponent, PhoneComponent, ],
-  providers: [AuthService]
+  providers: [AuthService, WindowService, ]
 })
 
 
