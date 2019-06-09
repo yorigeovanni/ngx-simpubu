@@ -41,15 +41,15 @@
                 <i id="icon" class="fas fa-chalkboard-teacher m-2" style="text-shadow: rgb(38, 78, 150) 0px 0px 0px, rgb(39, 82, 156) 1px 1px 0px, rgb(41, 85, 163) 2px 2px 0px, rgb(43, 88, 169) 3px 3px 0px, rgb(44, 92, 175) 4px 4px 0px, rgb(46, 95, 182) 5px 5px 0px, rgb(48, 99, 188) 6px 6px 0px, rgb(49, 102, 195) 7px 7px 0px, rgb(51, 105, 201) 8px 8px 0px, rgb(52, 109, 208) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(54, 112, 214);"></i>  
               </a>
       
-              <a [routerLinkActive]="['active']" [routerLink]="['./kalibrasi']">
+              <a [routerLinkActive]="['active']" [routerLink]="['./kalibrasi']" *ngIf="isBKP | async">
                 <i id="icon" class="fas fa-drafting-compass m-2" style="text-shadow: rgb(150, 60, 144) 0px 0px 0px, rgb(156, 63, 150) 1px 1px 0px, rgb(163, 65, 156) 2px 2px 0px, rgb(169, 68, 162) 3px 3px 0px, rgb(175, 71, 168) 4px 4px 0px, rgb(182, 73, 174) 5px 5px 0px, rgb(188, 76, 180) 6px 6px 0px, rgb(195, 78, 187) 7px 7px 0px, rgb(201, 81, 193) 8px 8px 0px, rgb(208, 83, 199) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(214, 86, 205);"></i>
               </a>
       
-              <a [routerLinkActive]="['active']" [routerLink]="['./sertifikasi']">
+              <a [routerLinkActive]="['active']" [routerLink]="['./sertifikasi']" *ngIf="isDBU | async">
                 <i id="icon" class="fas fa-edit m-2" style="text-shadow: rgb(150, 109, 76) 0px 0px 0px, rgb(156, 113, 80) 1px 1px 0px, rgb(163, 118, 83) 2px 2px 0px, rgb(169, 122, 86) 3px 3px 0px, rgb(175, 127, 89) 4px 4px 0px, rgb(182, 132, 93) 5px 5px 0px, rgb(188, 136, 96) 6px 6px 0px, rgb(195, 141, 99) 7px 7px 0px, rgb(201, 146, 102) 8px 8px 0px, rgb(208, 150, 106) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(214, 155, 109);"></i> 
               </a>
       
-              <a [routerLinkActive]="['active']" [routerLink]="['./verifikasi']">
+              <a [routerLinkActive]="['active']" [routerLink]="['./verifikasi']" *ngIf="isDBU | async">
                 <i id="icon" class="fas fa-diagnoses m-2" style="text-shadow: rgb(41, 125, 137) 0px 0px 0px, rgb(43, 130, 143) 1px 1px 0px, rgb(45, 135, 149) 2px 2px 0px, rgb(47, 141, 155) 3px 3px 0px, rgb(48, 146, 161) 4px 4px 0px, rgb(50, 151, 167) 5px 5px 0px, rgb(52, 157, 172) 6px 6px 0px, rgb(54, 162, 178) 7px 7px 0px, rgb(55, 167, 184) 8px 8px 0px, rgb(57, 173, 190) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(59, 178, 196);"></i>
               </a>
 

@@ -18,6 +18,8 @@ import { getUser, getIsLoggedIn, getIsLoading, getIsAdmin, getIsExist } from './
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
+
 export class AppComponent  implements OnInit, AfterViewInit {
 
   title = 'SIMPUBU - DIREKTORAT BANDAR UDARA';
@@ -28,7 +30,6 @@ export class AppComponent  implements OnInit, AfterViewInit {
   isAdmin$: Observable<boolean>;
 
 
-  
 
   constructor(
     private mdbSpinningPreloader: MDBSpinningPreloader, 

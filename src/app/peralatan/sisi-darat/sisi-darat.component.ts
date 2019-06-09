@@ -1,15 +1,72 @@
-import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { Store } from '@ngrx/store';
+import { AppState } from './../../reducers';
+
+import { 
+  getIsAdmin, 
+  getIsAdminSatker, 
+  getIsTeknisi, 
+  getIsDBU, 
+  getIsBTP,
+  getIsBKP,
+  getIsInspekturPeralatan,
+  getIsLoggedIn,
+  getIsLoading,
+} from './../../auth/store/auth.selectors';
+
+
 
 @Component({
   selector: 'app-sisi-darat',
   templateUrl: './sisi-darat.component.html',
   styleUrls: ['./sisi-darat.component.scss']
 })
-export class SisiDaratComponent implements OnInit {
 
-  constructor() { }
+
+export class SisiDaratComponent implements OnInit,AfterViewInit {
+
+  isAdmin$              : Observable<boolean>;
+  isAdminSatker$        : Observable<boolean>;
+  isTeknisi$            : Observable<boolean>;
+  isBKP$                : Observable<boolean>;
+  isBTP$                : Observable<boolean>;
+  isDBU$                : Observable<boolean>;
+  isInspekturPeralatan$ : Observable<boolean>;
+  isLoggedIn$           : Observable<boolean>;
+  isLoading$            : Observable<boolean>;
+
+  currentActiveSection = null;
+
+
+  constructor( private store: Store<AppState> ) { }
 
   ngOnInit() {
+    this.isAdmin$              = this.store.select(getIsAdmin);
+    this.isAdminSatker$        = this.store.select(getIsAdminSatker);
+    this.isTeknisi$            = this.store.select(getIsTeknisi);
+    this.isBKP$                = this.store.select(getIsBKP);
+    this.isBTP$                = this.store.select(getIsBTP);
+    this.isDBU$                = this.store.select(getIsDBU);
+    this.isInspekturPeralatan$ = this.store.select(getIsInspekturPeralatan);
+    this.isLoggedIn$           = this.store.select(getIsLoggedIn);
+    this.isLoading$            = this.store.select(getIsLoading);
+  }
+
+  ngAfterViewInit() {
+    window.setTimeout(() =>{
+      $( "#list-peralatan-sisi-darat" ).trigger( "click" );
+    });
+    
+  }
+
+
+  filterContent(event){
+    $('.buttonFilterContent').removeClass('btn-primary');
+    $("#" + event.target.attributes.id.nodeValue).addClass('btn-primary');
+    this.currentActiveSection = event.target.attributes.id.nodeValue;
   }
 
 }

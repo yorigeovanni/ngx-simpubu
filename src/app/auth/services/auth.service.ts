@@ -1,19 +1,16 @@
-// 01. INSERT KEBUTUHAN CORE MODULE
 import { Injectable } from '@angular/core';
 import { from } from 'rxjs';
 import { User } from '../models/user.model';
 
-// 02. INSERT KEBUTUHAN FIREBASE MODULE
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
-// 03. DEFINISI RUANG EKSEKUSI DI APP
+
 @Injectable({ providedIn: 'root' })
 
 
-// 04. MULAI EKSPORT SERVICE KE APP
 export class AuthService {
   constructor( private afAuth: AngularFireAuth, 
                private firestore: AngularFirestore, 
@@ -21,7 +18,6 @@ export class AuthService {
   { }
 
 
-  // 05. LOGIN DENGAN VENDOR SOSIAL MEDIA
   socialLogin(authProvider: string) {
     let provider: any;
 
@@ -52,7 +48,6 @@ export class AuthService {
   }
 
 
-  // JIKA USER BARU PERTAMA KALI LOGIN MENGGUNAKAN SOSMED - SAVE USER
   saveUser(user: User) {
     const userRef: AngularFirestoreDocument<any> = this.firestore.doc('users/' + user.uid);
     user.isOnline = true;
@@ -110,7 +105,6 @@ export class AuthService {
   }
 
 
-  // GET CURRENT USER (DIGUNAKAN PADA UPDATE PROFILE DIBAWAH)
   getCurrentUser() {
     return this.afAuth.auth.currentUser;
   }

@@ -8,192 +8,30 @@
               </div>
               <div class="col-md-10 pt-3 ml-auto">
                 <h3>PERALATAN SISI UDARA</h3>
-                <div class="d-flex">
-                    <button mdbBtn type="button"  size="sm" mdbWavesEffect>TAMBAH DATA BARU</button>
-                    <button mdbBtn type="button"  size="sm" mdbWavesEffect>LIST PERALATAN</button>
-                    <button mdbBtn type="button"  size="sm" mdbWavesEffect>PRINT DATA</button>
+                <div class="text-left">
+                    
+                    <button mdbBtn type="button" class="buttonFilterContent" id="list-peralatan-sisi-udara" size="sm" mdbWavesEffect (click)="filterContent($event);">LIST PERALATAN</button>
+                    <button mdbBtn type="button" class="buttonFilterContent" id="print-peralatan-sisi-udara" size="sm" mdbWavesEffect (click)="filterContent($event);">PRINT DATA</button>
+                    <button mdbBtn type="button" class="buttonFilterContent" id="add-peralatan-sisi-udara" size="sm" mdbWavesEffect *ngIf="(isAdmin$ | async) || (isAdminSatker$ | async) || !(isLoggedIn$ | async)" (click)="filterContent($event);">TAMBAH DATA BARU</button>
                 </div>
               </div>
             </div>
       </div>
     </div>
   
-    <div class="row mt-5">
-          <!-- MULAI CONTAINER KIRI -->
-          <div class="col-lg-6 col-md-12">
-  
-            <!-- container individu item peralatan -->
-            <div class="single-news mb-4">
-              <div class="row">
-                 <!-- Column 1 . foto peralatan -->
-                <div class="col-md-3">
-                  <div class="view overlay rounded z-depth-1 mb-4">
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/photo8.jpg" alt="Sample image">
-                    <a>
-                      <div class="mask rgba-white-slight"></div>
-                    </a>
-                  </div>
-                </div>
-                <!-- Column 2 . deskripsi peralatan -->
-                <div class="col-md-9">
-                  <!-- Excerpt -->
-                  <p class="font-weight-bold dark-grey-text">19/08/2018</p>
-                  <div class="d-flex justify-content-between">
-                    <div class="col-11 text-truncate pl-0 mb-3">
-                      <a href="#!" class="dark-grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
-                    </div>
-                    <a><i class="fas fa-angle-double-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-           <!-- selesai container individu item peralatan -->
-  
-           <!-- container individu item peralatan -->
-           <div class="single-news mb-4">
-              <div class="row">
-                 <!-- Column 1 . foto peralatan -->
-                <div class="col-md-3">
-                  <div class="view overlay rounded z-depth-1 mb-4">
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/photo8.jpg" alt="Sample image">
-                    <a>
-                      <div class="mask rgba-white-slight"></div>
-                    </a>
-                  </div>
-                </div>
-                <!-- Column 2 . deskripsi peralatan -->
-                <div class="col-md-9">
-                  <!-- Excerpt -->
-                  <p class="font-weight-bold dark-grey-text">19/08/2018</p>
-                  <div class="d-flex justify-content-between">
-                    <div class="col-11 text-truncate pl-0 mb-3">
-                      <a href="#!" class="dark-grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
-                    </div>
-                    <a><i class="fas fa-angle-double-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-           <!-- selesai container individu item peralatan -->
-  
-           <!-- container individu item peralatan -->
-           <div class="single-news mb-4">
-              <div class="row">
-                 <!-- Column 1 . foto peralatan -->
-                <div class="col-md-3">
-                  <div class="view overlay rounded z-depth-1 mb-4">
-                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/photo8.jpg" alt="Sample image">
-                    <a>
-                      <div class="mask rgba-white-slight"></div>
-                    </a>
-                  </div>
-                </div>
-                <!-- Column 2 . deskripsi peralatan -->
-                <div class="col-md-9">
-                  <!-- Excerpt -->
-                  <p class="font-weight-bold dark-grey-text">19/08/2018</p>
-                  <div class="d-flex justify-content-between">
-                    <div class="col-11 text-truncate pl-0 mb-3">
-                      <a href="#!" class="dark-grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
-                    </div>
-                    <a><i class="fas fa-angle-double-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-           <!-- selesai container individu item peralatan -->
-  
-          </div>
-          <!-- SELESAI CONTAINER KIRI -->
-  
-  
-          <!-- MULAI CONTAINER KANAN -->
-          <div class="col-lg-6 col-md-12">
-  
-              <!-- container individu item peralatan -->
-              <div class="single-news mb-4">
-                <div class="row">
-                   <!-- Column 1 . foto peralatan -->
-                  <div class="col-md-3">
-                    <div class="view overlay rounded z-depth-1 mb-4">
-                      <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/photo8.jpg" alt="Sample image">
-                      <a>
-                        <div class="mask rgba-white-slight"></div>
-                      </a>
-                    </div>
-                  </div>
-                  <!-- Column 2 . deskripsi peralatan -->
-                  <div class="col-md-9">
-                    <!-- Excerpt -->
-                    <p class="font-weight-bold dark-grey-text">19/08/2018</p>
-                    <div class="d-flex justify-content-between">
-                      <div class="col-11 text-truncate pl-0 mb-3">
-                        <a href="#!" class="dark-grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
-                      </div>
-                      <a><i class="fas fa-angle-double-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-             <!-- selesai container individu item peralatan -->
-  
-             <!-- container individu item peralatan -->
-             <div class="single-news mb-4">
-                <div class="row">
-                   <!-- Column 1 . foto peralatan -->
-                  <div class="col-md-3">
-                    <div class="view overlay rounded z-depth-1 mb-4">
-                      <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/photo8.jpg" alt="Sample image">
-                      <a>
-                        <div class="mask rgba-white-slight"></div>
-                      </a>
-                    </div>
-                  </div>
-                  <!-- Column 2 . deskripsi peralatan -->
-                  <div class="col-md-9">
-                    <!-- Excerpt -->
-                    <p class="font-weight-bold dark-grey-text">19/08/2018</p>
-                    <div class="d-flex justify-content-between">
-                      <div class="col-11 text-truncate pl-0 mb-3">
-                        <a href="#!" class="dark-grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
-                      </div>
-                      <a><i class="fas fa-angle-double-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-             <!-- selesai container individu item peralatan -->
-  
-             <!-- container individu item peralatan -->
-             <div class="single-news mb-4">
-                <div class="row">
-                   <!-- Column 1 . foto peralatan -->
-                  <div class="col-md-3">
-                    <div class="view overlay rounded z-depth-1 mb-4">
-                      <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/photo8.jpg" alt="Sample image">
-                      <a>
-                        <div class="mask rgba-white-slight"></div>
-                      </a>
-                    </div>
-                  </div>
-                  <!-- Column 2 . deskripsi peralatan -->
-                  <div class="col-md-9">
-                    <!-- Excerpt -->
-                    <p class="font-weight-bold dark-grey-text">19/08/2018</p>
-                    <div class="d-flex justify-content-between">
-                      <div class="col-11 text-truncate pl-0 mb-3">
-                        <a href="#!" class="dark-grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
-                      </div>
-                      <a><i class="fas fa-angle-double-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-             <!-- selesai container individu item peralatan -->
-  
-            </div>
-            <!-- SELESAI CONTAINER KANAN -->
+    <div class="row mt-5" *ngIf="(currentActiveSection === 'list-peralatan-sisi-udara')">
+      selector : shared/list-peralatan-sisi-udara
     </div>
+
+    <div class="row mt-5" *ngIf="(currentActiveSection === 'print-peralatan-sisi-udara')">
+      selector : shared/print-peralatan-sisi-udara
+    </div>
+
+    <div class="row mt-5" *ngIf="(currentActiveSection === 'add-peralatan-sisi-udara')">
+      selector : shared/add-peralatan-sisi-udara
+    </div>
+         
+  
   </section>
      
   
