@@ -16,7 +16,6 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 // 04. MULAI EKSPORT SERVICE KE APP
 export class AuthService {
   constructor( private afAuth: AngularFireAuth, 
-               private db: AngularFireDatabase,
                private firestore: AngularFirestore, 
               ) 
   { }
@@ -56,15 +55,6 @@ export class AuthService {
   // JIKA USER BARU PERTAMA KALI LOGIN MENGGUNAKAN SOSMED - SAVE USER
   saveUser(user: User) {
     const userRef: AngularFirestoreDocument<any> = this.firestore.doc('users/' + user.uid);
-    user.isAdmin = false;
-    user.isAdminSatker = false;
-    user.isTeknisi = false;
-    user.isDBU = false;
-    user.isBTP = false;
-    user.isBKP = false;
-    user.isInspekturPeralatan = false;
-    user.isInspekturPersonil = false;
-    user.isInspekturSatker = false;
     user.isOnline = true;
     // set user to NOT new user (supaya tidak overwrite data diatas)
     user.isNewUser = false;
@@ -77,6 +67,7 @@ export class AuthService {
   }
 
   checkIsAdminSatker(uid: string) {
+    console.log(uid);
     return this.firestore.collection('list_admin_satker').doc(uid).valueChanges();
   }
 
