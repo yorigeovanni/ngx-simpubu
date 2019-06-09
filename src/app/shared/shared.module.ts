@@ -22,6 +22,13 @@ import { SharedPeralatanYandarDeleteComponent } from './peralatan/yandar/crud/de
 import { SharedPeralatanYandarPrintComponent } from './peralatan/yandar/print/print.component';
 
 
+import { UmumComponent } from './peralatan/all-peralatan/umum/umum.component';
+import { SertifikatComponent } from './peralatan/all-peralatan/sertifikat/sertifikat.component';
+import { DokumentComponent } from './peralatan/all-peralatan/dokument/dokument.component';
+import { KalibrasiComponent } from './peralatan/all-peralatan/kalibrasi/kalibrasi.component';
+import { VerifikasiComponent } from './peralatan/all-peralatan/verifikasi/verifikasi.component';
+
+
 
 @NgModule({
   declarations: [
@@ -42,6 +49,13 @@ import { SharedPeralatanYandarPrintComponent } from './peralatan/yandar/print/pr
      SharedPeralatanYandarUpdateComponent,
      SharedPeralatanYandarDeleteComponent,
      SharedPeralatanYandarPrintComponent,
+
+     
+     UmumComponent,
+     SertifikatComponent,
+     DokumentComponent,
+     KalibrasiComponent,
+     VerifikasiComponent,
 
 
 
