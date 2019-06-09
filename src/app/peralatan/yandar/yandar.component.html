@@ -7,7 +7,7 @@
                   <i class="fas fa-ambulance m-2" style="text-shadow: rgb(173, 150, 0) 0px 0px 0px, rgb(180, 156, 0) 1px 1px 0px, rgb(188, 163, 0) 2px 2px 0px, rgb(195, 169, 0) 3px 3px 0px, rgb(203, 175, 0) 4px 4px 0px, rgb(210, 182, 0) 5px 5px 0px, rgb(217, 188, 0) 6px 6px 0px, rgb(225, 195, 0) 7px 7px 0px, rgb(232, 201, 0) 8px 8px 0px, rgb(240, 208, 0) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(247, 214, 0);"></i> 
               </div>
               <div class="col-md-10 pt-3 ml-auto">
-                <h3>PERALATAN PKP - PK</h3>
+                <h3>PERALATAN YANDAR (PKP-PK)</h3>
                 <div class="text-left">
                     <button mdbBtn type="button" class="buttonFilterContent" id="list-peralatan-yandar" size="sm" mdbWavesEffect (click)="filterContent($event);">LIST PERALATAN</button>
                     <button mdbBtn type="button" class="buttonFilterContent" id="print-peralatan-yandar" size="sm" mdbWavesEffect (click)="filterContent($event);">PRINT DATA</button>
@@ -20,15 +20,15 @@
   
     
     <div class="row mt-5" *ngIf="(currentActiveSection === 'list-peralatan-yandar')">
-        selector : shared/peralatan/yandar/list
+        <shared-peralatan-yandar-read></shared-peralatan-yandar-read>
       </div>
   
       <div class="row mt-5" *ngIf="(currentActiveSection === 'print-peralatan-yandar')">
-          selector : shared/peralatan/yandar/print
+          <shared-peralatan-yandar-print></shared-peralatan-yandar-print>
       </div>
   
       <div class="row mt-5" *ngIf="(currentActiveSection === 'add-peralatan-yandar')">
-          selector : shared/peralatan/yandar/add
+          <shared-peralatan-yandar-create></shared-peralatan-yandar-create>
       </div>
   </section>
      
