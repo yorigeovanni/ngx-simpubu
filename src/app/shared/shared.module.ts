@@ -15,6 +15,13 @@ import { SharedPeralatanSisiDaratDeleteComponent } from './peralatan/sisi-darat/
 import { SharedPeralatanSisiDaratPrintComponent } from './peralatan/sisi-darat/print/print.component';
 
 
+import { SharedPeralatanYandarCreateComponent } from './peralatan/yandar/crud/create/create.component';
+import { SharedPeralatanYandarReadComponent } from './peralatan/yandar/crud/read/read.component';
+import { SharedPeralatanYandarUpdateComponent } from './peralatan/yandar/crud/update/update.component';
+import { SharedPeralatanYandarDeleteComponent } from './peralatan/yandar/crud/delete/delete.component';
+import { SharedPeralatanYandarPrintComponent } from './peralatan/yandar/print/print.component';
+
+
 
 @NgModule({
   declarations: [
@@ -29,6 +36,16 @@ import { SharedPeralatanSisiDaratPrintComponent } from './peralatan/sisi-darat/p
      SharedPeralatanSisiDaratUpdateComponent,
      SharedPeralatanSisiDaratDeleteComponent,
      SharedPeralatanSisiDaratPrintComponent,
+
+     SharedPeralatanYandarCreateComponent,
+     SharedPeralatanYandarReadComponent,
+     SharedPeralatanYandarUpdateComponent,
+     SharedPeralatanYandarDeleteComponent,
+     SharedPeralatanYandarPrintComponent,
+
+
+
+
 
 
   ],
@@ -49,6 +66,12 @@ import { SharedPeralatanSisiDaratPrintComponent } from './peralatan/sisi-darat/p
      SharedPeralatanSisiDaratUpdateComponent,
      SharedPeralatanSisiDaratDeleteComponent,
      SharedPeralatanSisiDaratPrintComponent,
+
+     SharedPeralatanYandarCreateComponent,
+     SharedPeralatanYandarReadComponent,
+     SharedPeralatanYandarUpdateComponent,
+     SharedPeralatanYandarDeleteComponent,
+     SharedPeralatanYandarPrintComponent,
   ],
 })
 
