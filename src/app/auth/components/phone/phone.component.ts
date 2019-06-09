@@ -90,7 +90,6 @@ export class PhoneComponent implements OnInit {
 
         const appVerifier = this.windowRef.recaptchaVerifier;
         const num = this.formatPhoneNumber_e164();
-       // console.log(appVerifier);
         firebase.auth().signInWithPhoneNumber(num, appVerifier)
             .then(result => {
                 this.windowRef.confirmationResult = result;
