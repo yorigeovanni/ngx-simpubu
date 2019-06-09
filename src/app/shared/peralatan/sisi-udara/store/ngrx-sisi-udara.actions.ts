@@ -93,8 +93,8 @@ export type NgrxSisiUdaraActions =
 | loadPeralatanSisiUdaraSuccess
 | loadPeralatanSisiUdaraFail
 | updatePeralatanSisiUdara
-| updatePeralatanSisiUdara
-| updatePeralatanSisiUdara
+| updatePeralatanSisiUdaraSuccess
+| updatePeralatanSisiUdaraFail
 | deletePeralatanSisiUdara
 | deletePeralatanSisiUdaraSuccess
 | deletePeralatanSisiUdaraFail;
