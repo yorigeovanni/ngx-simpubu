@@ -151,5 +151,8 @@
       }
     }
   },
-  "defaultProject": "ngx-dbu-djpu"
+  "defaultProject": "ngx-dbu-djpu",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
