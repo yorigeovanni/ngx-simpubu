@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import * as sisiUdaraReducer from './peralatan/sisi-udara/store/ngrx-sisi-udara.reducer'
 
 
 
 // ======================================== SISI UDARA
-import { SisiUdaraEffects } from './peralatan/sisi-udara/store/sisi-udara.effects';
-import * as fromSisiUdara from './peralatan/sisi-udara/store/sisi-udara.reducer';
 
 import { CreateComponent } from './peralatan/sisi-udara/crud/create/create.component';
 import { ReadComponent } from './peralatan/sisi-udara/crud/read/read.component';
@@ -80,8 +81,9 @@ import { VerifikasiComponent } from './peralatan/all-peralatan/verifikasi/verifi
   imports: [
               CommonModule,
               FormsModule,
-              StoreModule.forFeature('sisiUdara', fromSisiUdara.sisiUdaraReducer),
-              EffectsModule.forFeature([SisiUdaraEffects]),
+              HttpClientModule,
+              StoreModule.forFeature('peralatansisiUdara', sisiUdaraReducer.Reducer),
+              
            ],
   
   exports : [

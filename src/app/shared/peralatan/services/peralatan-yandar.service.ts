@@ -1,6 +1,6 @@
+import { PeralatanYandar } from './../models/peralatan-yandar.model';
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { SisiUdara } from './../models/sisi-udara.model';
+import { of, from } from 'rxjs';
 
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -11,7 +11,8 @@ import { AngularFireDatabase } from '@angular/fire/database';
 @Injectable({
   providedIn: 'root'
 })
-export class SisiUdaraCrudService {
+
+export class PeralatanYandarService {
 
   constructor(
     private afAuth: AngularFireAuth, 
@@ -25,18 +26,12 @@ export class SisiUdaraCrudService {
     }
 
     
-    get userId() {
-      if (this.afAuth.auth.currentUser) {
-        return this.afAuth.auth.currentUser.uid;
-      }
-    }
-
   
     getCurrentUser() {
       return this.afAuth.auth.currentUser;
     }
   
-    create(sisi_udara: SisiUdara, userId: string) {
+    create(sisi_udara: PeralatanYandar, userId: string) {
       const peralatan_sisi_udara = this.firestore.collection('sisi_udara').doc(`${userId}`);
       return peralatan_sisi_udara.set(sisi_udara);
     }
@@ -45,16 +40,16 @@ export class SisiUdaraCrudService {
       return  this.firestore.collection('sisi_udara').doc(`${userId}`).snapshotChanges();
     }
   
-    update(sisi_udara: SisiUdara, userId: string) {
+    update(sisi_udara: PeralatanYandar, userId: string) {
       return of(this.db.object(`customers/${userId}/` + sisi_udara.key)
         .update({
           id: sisi_udara.key,
-          name: sisi_udara.nama_peralatan,
-          description: sisi_udara.kategori_peralatan,
+          name: sisi_udara.name,
+          description: sisi_udara.lokasi,
         }));
     }
   
-    delete(sisi_udara: SisiUdara, userId: string) {
+    delete(sisi_udara: PeralatanYandar, userId: string) {
       return this.db.object(`customers/${userId}/` + sisi_udara.key).remove();
     }
   
