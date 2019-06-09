@@ -1,21 +1,20 @@
 import { ActionReducerMap, MetaReducer, ActionReducer, Action } from '@ngrx/store';
 
-
 import { AuthState } from '../auth/store/auth.state';
-//import { AdminState } from '../admin/store/admin.state';
+import { SisiUdaraState } from '../shared/peralatan/sisi-udara/store/sisi-udara.state';
 
 import * as fromAuth from '../auth/store/auth.reducer';
-//import * as fromAdmin from '../admin/store/admin.reducer';
+import * as  fromSisiUdara  from '../shared/peralatan/sisi-udara/store/sisi-udara.reducer';
 
 
 export interface AppState {
   auth: AuthState;
-  //admin: AdminState;
+  sisiUdara : SisiUdaraState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
   auth: fromAuth.authReducer,
-  //admin: fromAdmin.adminReducer
+  sisiUdara: fromSisiUdara.sisiUdaraReducer,
 };
 
 export function clearState(reducer: ActionReducer<AppState>): ActionReducer<AppState> {

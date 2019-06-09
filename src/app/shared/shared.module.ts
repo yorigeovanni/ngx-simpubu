@@ -1,5 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+
+
+
+// ======================================== SISI UDARA
+import { SisiUdaraEffects } from './peralatan/sisi-udara/store/sisi-udara.effects';
+import * as fromSisiUdara from './peralatan/sisi-udara/store/sisi-udara.reducer';
 
 import { CreateComponent } from './peralatan/sisi-udara/crud/create/create.component';
 import { ReadComponent } from './peralatan/sisi-udara/crud/read/read.component';
@@ -8,6 +18,7 @@ import { DeleteComponent } from './peralatan/sisi-udara/crud/delete/delete.compo
 import { PrintComponent } from './peralatan/sisi-udara/print/print.component';
 
 
+// ======================================== SISI DARAT
 import { SharedPeralatanSisiDaratCreateComponent } from './peralatan/sisi-darat/crud/create/create.component';
 import { SharedPeralatanSisiDaratReadComponent } from './peralatan/sisi-darat/crud/read/read.component';
 import { SharedPeralatanSisiDaratUpdateComponent } from './peralatan/sisi-darat/crud/update/update.component';
@@ -15,6 +26,8 @@ import { SharedPeralatanSisiDaratDeleteComponent } from './peralatan/sisi-darat/
 import { SharedPeralatanSisiDaratPrintComponent } from './peralatan/sisi-darat/print/print.component';
 
 
+
+// ======================================== YANDAR | PKP-PK
 import { SharedPeralatanYandarCreateComponent } from './peralatan/yandar/crud/create/create.component';
 import { SharedPeralatanYandarReadComponent } from './peralatan/yandar/crud/read/read.component';
 import { SharedPeralatanYandarUpdateComponent } from './peralatan/yandar/crud/update/update.component';
@@ -65,7 +78,10 @@ import { VerifikasiComponent } from './peralatan/all-peralatan/verifikasi/verifi
   ],
 
   imports: [
-              CommonModule
+              CommonModule,
+              FormsModule,
+              StoreModule.forFeature('sisiUdara', fromSisiUdara.sisiUdaraReducer),
+              EffectsModule.forFeature([SisiUdaraEffects]),
            ],
   
   exports : [
