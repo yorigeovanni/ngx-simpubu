@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import * as $ from 'jquery';
+import * as firebase from 'firebase/app';
 
 import { Store, select } from '@ngrx/store';
 import { AppState } from '../../../reducers/index';
@@ -26,6 +28,22 @@ export class LoginComponent implements OnInit {
     { }
 
   ngOnInit() {
+
+    $(".online-span").hide();
+    $(".offline-span").hide();
+
+    let connectedRef = firebase.database().ref(".info/connected");
+      connectedRef.on("value", function(snap) {
+        if (snap.val() === true) {
+          $(".online-span").show();
+          $(".offline-span").hide();
+         // console.log('Online Mode...');
+        } else {
+          $(".online-span").hide();
+          $(".offline-span").show();
+         // console.log('Offline Mode...');
+        }
+      });
   
 
     this.error$ = this.store

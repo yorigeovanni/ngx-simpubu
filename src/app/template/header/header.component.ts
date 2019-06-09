@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { User } from './../../auth/models/user.model';
 
 import * as $ from 'jquery';
@@ -10,7 +10,7 @@ import * as firebase from 'firebase/app';
   styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent implements OnInit, AfterViewInit {
+export class HeaderComponent implements OnInit {
 
   @Input() user: User;
   @Input() isLoggedIn: boolean;
@@ -23,10 +23,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit() {
-    
-  }
-
-  ngAfterViewInit() {
     $(".online-span").hide();
     $(".offline-span").hide();
 
@@ -42,7 +38,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
          // console.log('Offline Mode...');
         }
       });
+    
   }
+
 
   onLogout() {
     this.logout.emit(this.user);

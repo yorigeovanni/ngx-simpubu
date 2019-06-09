@@ -1,21 +1,15 @@
 
-<section class="ml-5 mr-5">
-  <!-- Material form register -->
- <div class="card text-center">
- 
+<section class="ml-5 mr-5 online-span">
+  <div class="card text-center">
      <h5 class="card-header info-color white-text text-center py-4">
          <strong>MASUK SIMPUBU</strong>
      </h5>
- 
      <!--Card content-->
      <div class="card-body px-lg-5 pt-0">
+        <p class="h4 mb-4 mt-3 text-primary">PILIH METODE MASUK</p>
         <div *ngIf="error$ | async as error" class="alert alert-danger" role="alert">
             {{ error }}
           </div>
-          
-          <p class="h4 mb-4 mt-3 text-primary">PILIH METODE MASUK</p>
-          
-
           <button mdbBtn type="button" color="primary" size="sm" mdbWavesEffect [routerLinkActive]="['active']" [routerLink]="['../login-phone']">
               <mdb-icon fas icon="fas fa-sms" class="mr-1"></mdb-icon>melalui Ponsel
           </button>
@@ -39,37 +33,39 @@
           <button mdbBtn type="button" color="primary" size="sm" mdbWavesEffect>
               <mdb-icon fab icon="fab fa-microsoft" class="mr-1"></mdb-icon>melalui microsoft
           </button>
-
           <hr>
-
-         
-
-             <button type="button" class="btn btn-primary btn-rounded purple-gradient btn-sm text-center" data-toggle="modal" data-target="#modalYT">VIDEO PANDUAN</button>
- 
+          <button type="button" class="btn btn-primary btn-rounded purple-gradient btn-sm text-center" data-toggle="modal" data-target="#modalYT">VIDEO PANDUAN</button>
      </div>
- 
- </div>
+ </div> 
 
-         
-         
-         <!--Modal: modalYT-->
-         <div class="modal fade" id="modalYT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-           aria-hidden="true">
-           <div class="modal-dialog modal-lg" role="document">
-             <div class="modal-content">
-               <div class="modal-body mb-0 p-0">
-                 <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                   <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-B3dV7TOgaE"allowfullscreen></iframe>
-                 </div>
-               </div>
-               <div class="modal-footer justify-content-center flex-column flex-md-row">
-                 <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">TUTUP</button>
-               </div>
-             </div>
-           </div>
-         </div>
-         <!--Modal: modalYT-->
-       
-     
-       </section>
+  <!--Modal: modalYT-->
+  <div class="modal fade" id="modalYT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body mb-0 p-0">
+            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-B3dV7TOgaE"allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="modal-footer justify-content-center flex-column flex-md-row">
+          <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">TUTUP</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Modal: modalYT-->
+
+</section>
+
+
+
+
+<section class="offline-span">
+    <div class="flex-center flex-column">
+        <img src="assets/img/error.png" alt="Error 404" class="img-fluid" height="300px" width="300px">
+        <h1 class="animated fadeIn mt-4">NO INTERNET CONNECTION</h1>
+        <p class="flex-center text-center">Login/Masuk SIMPUBU hanya dapat dilakukan jika perangkat terhubung dengan internet</p>
+        <h5 class="animated fadeIn mb-3 mt-3">SIMPUBU - DIREKTORAT BANDAR UDARA</h5>
+    </div>
+</section>
      
