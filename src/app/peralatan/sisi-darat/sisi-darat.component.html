@@ -20,15 +20,15 @@
   
     
     <div class="row mt-5" *ngIf="(currentActiveSection === 'list-peralatan-sisi-darat')">
-        selector : shared/peralatan/sisi-darat/list
+        <shared-peralatan-sisi-darat-read></shared-peralatan-sisi-darat-read>
       </div>
   
       <div class="row mt-5" *ngIf="(currentActiveSection === 'print-peralatan-sisi-darat')">
-          selector : shared/peralatan/sisi-darat/print
+          <shared-peralatan-sisi-darat-print></shared-peralatan-sisi-darat-print>
       </div>
   
       <div class="row mt-5" *ngIf="(currentActiveSection === 'add-peralatan-sisi-darat')">
-          selector : shared/peralatan/sisi-darat/add
+          <shared-peralatan-sisi-darat-create></shared-peralatan-sisi-darat-create>
       </div>
   </section>
      

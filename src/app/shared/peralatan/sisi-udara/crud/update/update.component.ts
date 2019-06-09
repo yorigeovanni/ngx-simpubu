@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-update',
+  selector: 'shared-peralatan-sisi-udara-update',
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.scss']
 })

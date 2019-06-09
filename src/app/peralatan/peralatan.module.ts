@@ -2,6 +2,8 @@ import { PeralatanRoutingModule } from './peralatan-routing.module';
 import { PeralatanComponent } from './peralatan.component';
 import { AuthModule } from './../auth/auth.module';
 
+import { SharedModule } from './../shared/shared.module';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -44,9 +46,12 @@ import { VerifikasiComponent } from './verifikasi/verifikasi.component';
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    AuthModule,
     PeralatanRoutingModule,
     MDBBootstrapModulesPro,
+
+    AuthModule,
+    SharedModule,
+
   ]
 })
 export class PeralatanModule { }
