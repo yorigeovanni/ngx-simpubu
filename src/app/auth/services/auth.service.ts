@@ -72,21 +72,47 @@ export class AuthService {
   }
 
 
-
-  //CHECK JIKA USER ADALAH ADMIN
   checkUserRole(uid: string) {
-    return this.firestore.collection("users").doc(uid).valueChanges();
-    //return this.db.object('admins/' + uid).valueChanges();
+    return this.firestore.collection('list_admins').doc(uid).valueChanges();
   }
 
-  
-  // FUNCTION UPDATE ONLINE STATUS - DIGUNAKAN PADA SAAT LOGIN DAN LOGOUT
+  checkIsAdminSatker(uid: string) {
+    return this.firestore.collection('list_admin_satker').doc(uid).valueChanges();
+  }
+
+  checkIsBKP(uid: string) {
+    return this.firestore.collection('list_BKP').doc(uid).valueChanges();
+  }
+
+  checkIsBTP(uid: string) {
+    return this.firestore.collection('list_BTP').doc(uid).valueChanges();
+  }
+
+  checkIsDBU(uid: string) {
+    return this.firestore.collection('list_DBU').doc(uid).valueChanges();
+  }
+
+  checkIsInspekturPeralatan(uid: string) {
+    return this.firestore.collection('list_inspektur_peralatan').doc(uid).valueChanges();
+  }
+
+  checkIsInspekturPersonil(uid: string) {
+    return this.firestore.collection('list_inspektur_personil').doc(uid).valueChanges();
+  }
+
+  checkIsInspekturSatker(uid: string) {
+    return this.firestore.collection('list_inspektur_satker').doc(uid).valueChanges();
+  }
+
+
+  checkIsTeknisi(uid: string) {
+    return this.firestore.collection('list_teknisi').doc(uid).valueChanges();
+  }
+
   updateOnlineStatus(uid: string, status: boolean) {
     return from(this.firestore.collection("users").doc(uid).update({ isOnline: status }));
   }
 
-
-  // FUNCTION LOGOUT
   logout(uid: string) {
     this.updateOnlineStatus(uid, false);
     return from(this.afAuth.auth.signOut());
@@ -99,7 +125,6 @@ export class AuthService {
   }
 
 
-  //UPDATE PROFILE
   updateProfile(displayName: string, photoUrl: string) {
     const userProfile = this.afAuth.auth.currentUser;
     if (userProfile) {

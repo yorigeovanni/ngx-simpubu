@@ -35,7 +35,7 @@ export enum AuthActionTypes {
   UPDATE_IS_INSPEKTUR_SATKER = '[Auth] Update is inspektur satker',
 
   CHECK_IS_TEKNISI = '[Auth] Check is teknisi',
-  UPDATE_IS_TEKNISI = '[Auth] Update is inspektur teknisi',
+  UPDATE_IS_TEKNISI = '[Auth] Update is teknisi',
 
   UPDATE_ONLINE_STATUS = '[Auth] Update online status',
 
