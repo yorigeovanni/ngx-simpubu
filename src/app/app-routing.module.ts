@@ -13,6 +13,7 @@ const routes: Routes = [
 	{ path: 'regulasi', loadChildren: './regulasi/regulasi.module#RegulasiModule'},
 	{ path: 'kelolah-akun', loadChildren: './kelola-akun/kelola-akun.module#KelolaAkunModule', /*canActivate: [AuthGuard]*/},
 	{ path: 'global-auth', loadChildren: './global-auth/global-auth.module#GlobalAuthModule', /*canActivate: [AuthGuard]*/},
+	{ path: 'master-data', loadChildren: './master-data/master-data.module#MasterDataModule',},
   	{ path: '**', component: NotFoundComponent }
 ];
 
