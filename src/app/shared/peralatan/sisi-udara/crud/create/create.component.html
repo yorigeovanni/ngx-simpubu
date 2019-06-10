@@ -1,4 +1,76 @@
-<div class="white px-4 section-header">
+<div class="row">
+  <div class="col-5">
+      <form class="form-inline md-form form-sm m-1">
+          <input class="form-control form-control-sm" type="text" placeholder="Pencarian Kategori" aria-label="Search" mdbInput>
+      </form>
+      <ul class="list-group scrollbar-light-blue">
+          <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="1">
+            RUNWAY EDGE LIGHT <span class="badge badge-primary badge-pill">14</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="2">
+            Dapibus ac facilisis in <span class="badge badge-primary badge-pill">2</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="3">
+            Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="4">
+              Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="5">
+                Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="6">
+                  Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
+                </li>
 
+
+                <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="4">
+                    Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="5">
+                      Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="6">
+                        Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
+                      </li>  <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="4">
+                          Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="5">
+                            Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
+                          </li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="6">
+                              Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
+                            </li>
+      </ul>
   </div>
+
+
+  <div class="col-7 mt-5">
+      <form class="text-center border border-light p-2">
+          <h6><strong>INPUT PERALATAN SISI UDARA</strong></h6>
+          <p><strong>KATEGORI - {{curentKategoriPeralatan}}</strong></p>
+          <div class="md-form form-sm m-0 p-0">
+              <input mdbInput type="text" id="form1" class="form-control form-control-sm">
+              <label for="form1" class="">Nama Peralatan</label>
+          </div>
+
+          <div class="md-form form-sm m-0 p-0">
+              <input mdbInput type="text" id="form2" class="form-control form-control-sm">
+              <label for="form2" class="">Lokasi</label>
+          </div>
+
+          <div class="md-form form-sm m-0 p-0">
+              <input mdbInput type="text" id="form3" class="form-control form-control-sm">
+              <label for="form3" class="">Tahun Pengadaan</label>
+          </div>
+
+        
+          <button class="btn btn-sm btn-pink" type="submit" *ngIf="(curentKategoriPeralatan !== null)">Simpan Data</button>
+          <button class="btn btn-sm btn-pink" type="submit" *ngIf="(curentKategoriPeralatan === null)" disabled>Simpan Data</button>
+        
+        </form>
+  </div>
+    
+
   
+</div>

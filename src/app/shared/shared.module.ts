@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -83,6 +83,7 @@ import { VerifikasiComponent } from './peralatan/all-peralatan/verifikasi/verifi
               FormsModule,
               HttpClientModule,
               StoreModule.forFeature('peralatansisiUdara', sisiUdaraReducer.Reducer),
+              MDBBootstrapModulesPro,
               
            ],
   

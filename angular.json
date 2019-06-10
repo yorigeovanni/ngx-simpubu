@@ -42,8 +42,7 @@
               "node_modules/hammerjs/hammer.min.js",
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "src/assets/js/mdb.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ],
             "es5BrowserSupport": true
           },

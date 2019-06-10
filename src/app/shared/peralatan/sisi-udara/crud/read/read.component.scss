@@ -1,0 +1,30 @@
+.scrollbar-light-blue {
+    overflow-y: scroll; 
+    max-height:330px;
+  }
+
+.scrollbar-light-blue::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 12px;
+  }
+  
+  .scrollbar-light-blue::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+  }
+  
+  .scrollbar-light-blue::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #ec407a;
+  }
+
+  li:hover {
+    cursor: pointer;
+  }
+
+  .pink-active {
+    background-color:#ec407a;
+    color:  #F5F5F5;
+  }

@@ -1,67 +1,52 @@
 <section class="section mt-5 mb-5 py-3">
-  <div class="row pt-2 mt-5">
+    <div class="row pt-2 mt-5">
+      <div class="col-md-6">
+          <div class="row text-white mr-auto">
+                  <a [routerLinkActive]="['active']" [routerLink]="['./semua-peralatan']" class="col-3 text-center text-white btn btn-flat btn-info" role="button" aria-pressed="true">
+                      <i class="fas fa-th-large fa-4x m-auto p-auto"></i><br> <span class="text-sm d-none d-lg-block">SEMUA PERALATAN</span>
+                  </a>
   
-    <div class="col-lg-12 col-md-12">
-
-      <div class="row">
-        <div class="col-md-12 col-lg-12">
-            <h5 class="h5 font-weight-bold text-center purple-text">DASHBOARD PERALATAN BANDAR UDARA,SATKER, & STACKHOLDER - DIREKTORAT BANDAR UDARA</h5>
-        </div>
+                  <a [routerLinkActive]="['active']" [routerLink]="['./sisi-udara']" class="col-3 text-center text-white btn btn-flat btn-info" role="button" aria-pressed="true">
+                      <i class="fas fa-satellite-dish fa-4x"></i><br> <span class="text-sm d-none d-lg-block">SISI UDARA</span>
+                  </a>
+  
+                  <a [routerLinkActive]="['active']" [routerLink]="['./sisi-darat']" class="col-3 text-center text-white btn btn-flat btn-info" role="button" aria-pressed="true">
+                      <i class="fas fa-charging-station fa-4x"></i><br> <span class="text-sm d-none d-lg-block">SISI DARAT</span>
+                  </a>
+  
+                  <a [routerLinkActive]="['active']" [routerLink]="['./yandar']" class="col-3 text-center text-white btn btn-flat btn-info" role="button" aria-pressed="true">
+                      <i class="fas  fa-fire-extinguisher fa-4x"></i><br> <span class="text-sm d-none d-lg-block">PKP -PK</span>
+                  </a>
+  
+                  <a [routerLinkActive]="['active']" [routerLink]="['./suku-cadang']" class="col-3 text-center text-white btn btn-flat btn-info" role="button" aria-pressed="true">
+                      <i class="fab fa-steam-symbol fa-4x"></i><br> <span class="text-sm d-none d-lg-block">SPAREPARTS</span>
+                  </a>
+  
+                  <a [routerLinkActive]="['active']" [routerLink]="['./kerusakan-perbaikan']" class="col-3 text-white btn btn-flat btn-info" role="button" aria-pressed="true">
+                      <i class="fas fa-tools fa-4x"></i><br> <span class="text-sm d-none d-lg-block">LKP</span>
+                  </a>
+  
+                  <a [routerLinkActive]="['active']" [routerLink]="['./sertifikasi']" class="col-3 text-center text-white btn btn-flat btn-info" role="button" aria-pressed="true">
+                      <i class="fas fa-edit fa-4x"></i><br> <span class="text-sm d-none d-lg-block">SERTIFIKASI</span>
+                  </a>
+  
+                  <a [routerLinkActive]="['active']" [routerLink]="['./verifikasi']"class="col-3 text-center text-white btn btn-flat btn-info" role="button" aria-pressed="true">
+                      <i class="fas fa-diagnoses fa-4x"></i><br> <span class="text-sm d-none d-lg-block">VERIFIKASI</span>
+                  </a>
+  
+                  <a [routerLinkActive]="['active']" [routerLink]="['./kalibrasi']" class="col-3 text-center text-white btn btn-flat btn-info" role="button" aria-pressed="true">
+                      <i class="fas fa-drafting-compass fa-4x"></i><br> <span class="text-sm d-none d-lg-block">KALIBRASI</span>
+                  </a>
+          </div>         
       </div>
-
-      <div class="row mt-5">
-        <div class="col-md-4 col-lg-4">
-          <div class="row">
-            
-              <a [routerLinkActive]="['active']" [routerLink]="['./semua-peralatan']">
-                <i id="semua-peralatan" class="fab fa-hubspot m-2" style="text-shadow: rgb(48, 117, 165) 0px 0px 0px, rgb(50, 122, 172) 1px 1px 0px, rgb(52, 127, 179) 2px 2px 0px, rgb(54, 132, 186) 3px 3px 0px, rgb(56, 137, 193) 4px 4px 0px, rgb(58, 142, 200) 5px 5px 0px, rgb(60, 147, 207) 6px 6px 0px, rgb(62, 152, 214) 7px 7px 0px, rgb(64, 157, 221) 8px 8px 0px, rgb(66, 162, 228) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(68, 167, 235);"></i> 
-              </a>
+  
       
-              <a [routerLinkActive]="['active']" [routerLink]="['./sisi-udara']">
-                <i class="fas fa-satellite-dish m-2" style="text-shadow: rgb(179, 46, 117) 0px 0px 0px, rgb(186, 48, 122) 1px 1px 0px, rgb(194, 50, 127) 2px 2px 0px, rgb(201, 52, 132) 3px 3px 0px, rgb(209, 54, 137) 4px 4px 0px, rgb(217, 56, 142) 5px 5px 0px, rgb(224, 58, 147) 6px 6px 0px, rgb(232, 60, 152) 7px 7px 0px, rgb(240, 62, 157) 8px 8px 0px, rgb(247, 64, 162) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(255, 66, 167);"></i>  
-              </a>
-      
-              <a [routerLinkActive]="['active']" [routerLink]="['./sisi-darat']">
-                <i class="fas fa-charging-station m-2" style="text-shadow: rgb(25, 136, 106) 0px 0px 0px, rgb(26, 142, 110) 1px 1px 0px, rgb(27, 147, 115) 2px 2px 0px, rgb(28, 153, 119) 3px 3px 0px, rgb(29, 159, 124) 4px 4px 0px, rgb(30, 165, 128) 5px 5px 0px, rgb(31, 171, 133) 6px 6px 0px, rgb(32, 177, 137) 7px 7px 0px, rgb(33, 182, 142) 8px 8px 0px, rgb(34, 188, 146) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(35, 194, 151);"></i> 
-              </a>
-      
-              <a [routerLinkActive]="['active']" [routerLink]="['./yandar']">
-                <i class="fas fa-ambulance m-2" style="text-shadow: rgb(173, 150, 0) 0px 0px 0px, rgb(180, 156, 0) 1px 1px 0px, rgb(188, 163, 0) 2px 2px 0px, rgb(195, 169, 0) 3px 3px 0px, rgb(203, 175, 0) 4px 4px 0px, rgb(210, 182, 0) 5px 5px 0px, rgb(217, 188, 0) 6px 6px 0px, rgb(225, 195, 0) 7px 7px 0px, rgb(232, 201, 0) 8px 8px 0px, rgb(240, 208, 0) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(247, 214, 0);"></i> 
-              </a>
-      
-              <a [routerLinkActive]="['active']" [routerLink]="['./kerusakan-perbaikan']">
-                <i class="fas fa-tools m-2" style="text-shadow: rgb(166, 41, 75) 0px 0px 0px, rgb(173, 43, 78) 1px 1px 0px, rgb(180, 45, 81) 2px 2px 0px, rgb(187, 47, 85) 3px 3px 0px, rgb(194, 48, 88) 4px 4px 0px, rgb(201, 50, 91) 5px 5px 0px, rgb(209, 52, 94) 6px 6px 0px, rgb(216, 54, 97) 7px 7px 0px, rgb(223, 55, 101) 8px 8px 0px, rgb(230, 57, 104) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(237, 59, 107);"></i> 
-              </a>
-      
-              <a [routerLinkActive]="['active']" [routerLink]="['./suku-cadang']">
-                <i id="icon" class="fab fa-steam-square m-2" style="text-shadow: rgb(136, 64, 153) 0px 0px 0px, rgb(142, 67, 160) 1px 1px 0px, rgb(147, 70, 166) 2px 2px 0px, rgb(153, 73, 173) 3px 3px 0px, rgb(159, 75, 180) 4px 4px 0px, rgb(165, 78, 186) 5px 5px 0px, rgb(171, 81, 193) 6px 6px 0px, rgb(177, 84, 199) 7px 7px 0px, rgb(182, 86, 206) 8px 8px 0px, rgb(188, 89, 212) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(194, 92, 219);"></i> 
-              </a>
-      
-              <a [routerLinkActive]="['active']" [routerLink]="['./monitoring']">
-                <i id="icon" class="fas fa-chalkboard-teacher m-2" style="text-shadow: rgb(38, 78, 150) 0px 0px 0px, rgb(39, 82, 156) 1px 1px 0px, rgb(41, 85, 163) 2px 2px 0px, rgb(43, 88, 169) 3px 3px 0px, rgb(44, 92, 175) 4px 4px 0px, rgb(46, 95, 182) 5px 5px 0px, rgb(48, 99, 188) 6px 6px 0px, rgb(49, 102, 195) 7px 7px 0px, rgb(51, 105, 201) 8px 8px 0px, rgb(52, 109, 208) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(54, 112, 214);"></i>  
-              </a>
-      
-              <a [routerLinkActive]="['active']" [routerLink]="['./kalibrasi']" *ngIf="isBKP | async">
-                <i id="icon" class="fas fa-drafting-compass m-2" style="text-shadow: rgb(150, 60, 144) 0px 0px 0px, rgb(156, 63, 150) 1px 1px 0px, rgb(163, 65, 156) 2px 2px 0px, rgb(169, 68, 162) 3px 3px 0px, rgb(175, 71, 168) 4px 4px 0px, rgb(182, 73, 174) 5px 5px 0px, rgb(188, 76, 180) 6px 6px 0px, rgb(195, 78, 187) 7px 7px 0px, rgb(201, 81, 193) 8px 8px 0px, rgb(208, 83, 199) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(214, 86, 205);"></i>
-              </a>
-      
-              <a [routerLinkActive]="['active']" [routerLink]="['./sertifikasi']" *ngIf="isDBU | async">
-                <i id="icon" class="fas fa-edit m-2" style="text-shadow: rgb(150, 109, 76) 0px 0px 0px, rgb(156, 113, 80) 1px 1px 0px, rgb(163, 118, 83) 2px 2px 0px, rgb(169, 122, 86) 3px 3px 0px, rgb(175, 127, 89) 4px 4px 0px, rgb(182, 132, 93) 5px 5px 0px, rgb(188, 136, 96) 6px 6px 0px, rgb(195, 141, 99) 7px 7px 0px, rgb(201, 146, 102) 8px 8px 0px, rgb(208, 150, 106) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(214, 155, 109);"></i> 
-              </a>
-      
-              <a [routerLinkActive]="['active']" [routerLink]="['./verifikasi']" *ngIf="isDBU | async">
-                <i id="icon" class="fas fa-diagnoses m-2" style="text-shadow: rgb(41, 125, 137) 0px 0px 0px, rgb(43, 130, 143) 1px 1px 0px, rgb(45, 135, 149) 2px 2px 0px, rgb(47, 141, 155) 3px 3px 0px, rgb(48, 146, 161) 4px 4px 0px, rgb(50, 151, 167) 5px 5px 0px, rgb(52, 157, 172) 6px 6px 0px, rgb(54, 162, 178) 7px 7px 0px, rgb(55, 167, 184) 8px 8px 0px, rgb(57, 173, 190) 9px 9px 0px; font-size: 71px; color: rgb(255, 255, 255); height: 111px; width: 111px; line-height: 111px; border-radius: 14%; text-align: center; background-color: rgb(59, 178, 196);"></i>
-              </a>
-
-          </div>
-        </div>
-
-        <div class="col-md-8 col-lg-8">
-            <router-outlet></router-outlet>
-        </div>
-          
+      <div class="col-md-6">
+          <router-outlet></router-outlet>          
       </div>
-    </div>
-</div>
+                   
+  
+  </div>
 </section>
-
+  
+  

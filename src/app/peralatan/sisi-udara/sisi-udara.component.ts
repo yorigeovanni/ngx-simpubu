@@ -63,8 +63,9 @@ export class SisiUdaraComponent implements OnInit, AfterViewInit {
 
 
   filterContent(event){
-    $('.buttonFilterContent').removeClass('btn-primary');
-    $("#" + event.target.attributes.id.nodeValue).addClass('btn-primary');
+    $('.buttonFilterContent').removeClass('btn-pink');
+    $("#" + event.target.attributes.id.nodeValue).addClass('btn-pink');
     this.currentActiveSection = event.target.attributes.id.nodeValue;
+    console.log(this.currentActiveSection);
   }
 }
