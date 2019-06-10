@@ -9,39 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class ReadComponent implements OnInit {
 
   curentKategoriPeralatan : string = null;
-  colorSelect: Array<any>;
-  sizeSelect: Array<any>;
-
-  public itemsList: Object[] = [
-    {
-    title: 'Description',
-    description: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson adsquid.'
-    },
-    {
-    title: 'Details',
-    description: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson adsquid.'
-    },
-    {
-    title: 'Shipping',
-    description: 'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson adsquid.'
-    }
-    ];
-
-
   constructor() { }
 
   ngOnInit() {
 
-    this.colorSelect = [
-      { value: 'Black', label: 'Black' },
-      { value: 'White', label: 'White' },
-      { value: 'Red', label: 'Red' },
-      ];
-      this.sizeSelect = [
-      { value: 'XS', label: 'XS' },
-      { value: 'S', label: 'S' },
-      { value: 'L', label: 'L' },
-      ];
+   
       
   }
 

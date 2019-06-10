@@ -1,4 +1,5 @@
 <div class="row">
+  <!-- LIST KATEGORI PERALATAN SISI UDARA-->
   <div class="col-md-5">
       <form class="form-inline md-form form-sm m-0">
           <input class="form-control form-control-sm" type="text" placeholder="pencarian kategori" aria-label="Search" mdbInput>
@@ -13,32 +14,12 @@
           <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="3">
             Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
           </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="4">
-              Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="5">
-                Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="6">
-                  Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="5">
-                    Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="6">
-                      Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="5">
-                        Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
-                      </li>
-                      <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="6">
-                          Morbi leo risus<span class="badge badge-primary badge-pill">1</span>
-                        </li>
       </ul>
-
   </div>
 
+  <!-- LIST ITEM PERALATAN SISI UDARA -->
   <div class="col-md-7">
+    <!-- form pencarian item data peralatan sisi udara -->
     <div class="row m-auto">
         <form class="form-inline md-form form-sm m-0">
             <input class="form-control form-control-sm mr-2" type="text" placeholder="pencarian peralatan" aria-label="Search" mdbInput>
@@ -47,9 +28,10 @@
         </form>
     </div>
 
+    <!-- container peralatan sisi udara -->
     <div class="row m-auto">
         <div class="list-group m-auto">
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <a class="list-group-item list-group-item-action flex-column align-items-start" data-toggle="modal" data-target="#basicExample" (click)="frame.show()">
               <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">List group item heading</h5>
                 <small>3 days ago</small>
@@ -59,7 +41,7 @@
               <small>Donec id elit non mi porta.</small>
             </a>
 
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <a class="list-group-item list-group-item-action flex-column align-items-start" data-toggle="modal" data-target="#basicExample" (click)="frame.show()">
               <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">List group item heading</h5>
                 <small class="text-muted">3 days ago</small>
@@ -69,7 +51,7 @@
               <small class="text-muted">Donec id elit non mi porta.</small>
             </a>
 
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <a class="list-group-item list-group-item-action flex-column align-items-start" data-toggle="modal" data-target="#basicExample" (click)="frame.show()">
               <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">List group item heading</h5>
                 <small class="text-muted">3 days ago</small>
@@ -78,51 +60,47 @@
                 blandit.</p>
               <small class="text-muted">Donec id elit non mi porta.</small>
             </a>
-
-          </div>
+        </div>
     </div>
   </div>
 </div>
 
 
-
-<button type="button" mdbBtn color="primary" class="waves-light" data-toggle="modal" data-target="#basicExample"
-  (click)="frame.show()" mdbWavesEffect>Launch Modal</button>
-
-<div mdbModal #frame="mdbModal" class="modal fade" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
+<!-- container modal detail peralatan -->
+<div mdbModal #frame="mdbModal" class="modal fade" id="frameModalTop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: true, ignoreBackdropClick: true, keyboard: true}">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-body">
+
         <div class="row">
+
           <div class="col-lg-5">
-            <!--Carousel Wrapper-->
-            <mdb-carousel [isControls]="true" [animation]="'slide'">
-              <!--First slide-->
-              <mdb-slide>
-                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(23).jpg"
-                  alt="First slide">
-              </mdb-slide>
-              <!--/First slide-->
-              <!--Second slide-->
-              <mdb-slide>
-                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(24).jpg"
-                  alt="Second slide">
-              </mdb-slide>
-              <!--/Second slide-->
-              <!--Third slide-->
-              <mdb-slide>
-                <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/img%20(25).jpg"
-                  alt="Third slide">
-              </mdb-slide>
-              <!--/Third slide-->
-            </mdb-carousel>
-            <!--/.Carousel Wrapper-->
+              <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect>
+                  <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/img%20(27).jpg" alt="Sample image">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+              </div>
+
+              <ul class="list-group mt-5 mb-5">
+                  <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="q">
+                    DOKUMENT PERALATAN <span class="badge badge-primary badge-pill">14</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="a">
+                    LOG PERAWATAN <span class="badge badge-primary badge-pill">2</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center" (click)="setKategoriPeralatan($event)" id="c">
+                    LOG KERUSAKAN/PERBAIKAN<span class="badge badge-primary badge-pill">1</span>
+                  </li>
+                  
+              </ul>
           </div>
+
           <div class="col-lg-7">
-            <h2 class="h2-responsive product-name">
-              <strong>Product Name</strong>
-            </h2>
+            <h5 class="h2-responsive product-name">
+              <strong>Nama Peralatan</strong>
+            </h5>
+
             <h4 class="h4-responsive">
               <span class="green-text">
                 <strong>$49</strong>
@@ -134,29 +112,9 @@
               </span>
             </h4>
 
-            <!--Accordion wrapper-->
-            <mdb-squeezebox [multiple]="false" aria-multiselectable="true">
-              <mdb-item [collapsed]="true" *ngFor="let item of itemsList">
-                <mdb-item-head> {{ item.title }} </mdb-item-head>
-                <mdb-item-body> {{ item.description }} </mdb-item-body>
-              </mdb-item>
-            </mdb-squeezebox>
-            <!--/.Accordion wrapper-->
-
-            <!-- Add to Cart -->
+        
             <div class="card-body">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="md-form">
-                    <mdb-select [options]="colorSelect" placeholder="Choose your color"></mdb-select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="md-form">
-                    <mdb-select [options]="sizeSelect" placeholder="Choose your size"></mdb-select>
-                  </div>
-                </div>
-              </div>
+             
               <div class="text-center">
 
                 <button type="button" mdbBtn color="secondary" class="waves-light" mdbWavesEffect (click)="frame.hide()"
@@ -166,7 +124,7 @@
                 </button>
               </div>
             </div>
-            <!-- /.Add to Cart -->
+         
           </div>
         </div>
       </div>
