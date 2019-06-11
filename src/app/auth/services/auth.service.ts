@@ -41,9 +41,11 @@ export class AuthService {
       provider = new firebase.auth.FacebookAuthProvider();
     }
 
-    if (authProvider === 'twitter') {
-      provider = new firebase.auth.TwitterAuthProvider();
+    if (authProvider === 'github') {
+      provider = new firebase.auth.GithubAuthProvider();
     }
+
+
     return from(this.afAuth.auth.signInWithPopup(provider));
   }
 

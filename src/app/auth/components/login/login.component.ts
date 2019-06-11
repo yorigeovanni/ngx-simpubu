@@ -73,4 +73,8 @@ export class LoginComponent implements OnInit {
     this.store.dispatch(new actions.SocialLogin({ authProvider }));
   }
 
+  onGithubLogin(authProvider: string) {
+    this.store.dispatch(new actions.SocialLogin({ authProvider }));
+  }
+
 }
