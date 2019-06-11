@@ -27,6 +27,7 @@ export class AuthEffects {
     switchMap(payload => this.authService.socialLogin(payload.authProvider)
       .pipe(
         map( (res: any) => {
+          console.log(res);
           const user = {
             uid: res.user.uid,
             displayName: res.user.displayName,
