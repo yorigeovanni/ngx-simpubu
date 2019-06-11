@@ -45,10 +45,7 @@ export class PhoneComponent implements OnInit {
     
 
     this.loginPhoneForm = new FormGroup({
-      country: new FormControl('62', [Validators.required, Validators.maxLength(2)]),
-      area: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(3)]),
-      prefix: new FormControl(null, [Validators.required, Validators.minLength(4), Validators.maxLength(4)]),
-      line: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(4)]),
+      no_hp: new FormControl(null, [Validators.required, Validators.minLength(10), Validators.maxLength(12), Validators.pattern('[0-9]+')]),
     });
   
 
@@ -66,30 +63,27 @@ export class PhoneComponent implements OnInit {
   }
 
   
-  get country() { return this.loginPhoneForm.get('country'); }
-  get area() { return this.loginPhoneForm.get('area'); }
-  get prefix() { return this.loginPhoneForm.get('prefix'); }
-  get line() { return this.loginPhoneForm.get('line'); }
+
+  get no_hp() { return this.loginPhoneForm.get('no_hp'); }
 
 
   formatPhoneNumber_e164() {
-    const country : string = this.loginPhoneForm.value.country;
-    const area : string = this.loginPhoneForm.value.area;
-    const prefix : string = this.loginPhoneForm.value.prefix;
-    const line : string = this.loginPhoneForm.value.line;
-    const num = country + area + prefix + line
+    const no_hp : string = this.loginPhoneForm.value.no_hp;
+    const num = no_hp;
     return `+${num}`
   }
-
-
-
 
 
   onPhoneLogin() {
     if (this.loginPhoneForm.valid) {
 
         const appVerifier = this.windowRef.recaptchaVerifier;
-        const num = this.formatPhoneNumber_e164();
+        let first_num = this.formatPhoneNumber_e164();
+
+        if(first_num.charAt(0) === '+'){
+          first_num = first_num.slice(2);
+        }
+        const num = '+62' + first_num; 
         firebase.auth().signInWithPhoneNumber(num, appVerifier)
             .then(result => {
                 this.windowRef.confirmationResult = result;
