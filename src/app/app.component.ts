@@ -1,5 +1,6 @@
 import * as $ from 'jquery';
 import {MDBSpinningPreloader} from 'ng-uikit-pro-standard';
+import { MessagingService } from "./notifications/messaging.service";
 
 import { Component, OnInit , AfterViewInit } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -30,14 +31,20 @@ export class AppComponent  implements OnInit, AfterViewInit {
   isAdmin$: Observable<boolean>;
 
 
-
+  message;
   constructor(
     private mdbSpinningPreloader: MDBSpinningPreloader, 
-    private store: Store<AppState> ) 
+    private store: Store<AppState>,
+    private messagingService: MessagingService, ) 
     {}
 
 
   ngOnInit() {
+
+    const userId = 'user001';
+    this.messagingService.requestPermission(userId)
+    this.messagingService.receiveMessage()
+    this.message = this.messagingService.currentMessage
 
     this.user$ = this.store.select(getUser);
     this.isLoggedIn$ = this.store.select(getIsLoggedIn);

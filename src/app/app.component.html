@@ -1,3 +1,5 @@
 <app-header [user]="user$ | async" [isLoggedIn]="isLoggedIn$ | async" [isLoading]="isLoading$ | async" [isAdmin]="isAdmin$ | async"(logout)="onLogout($event)"></app-header>
 <app-main></app-main>
+Current Message
+<h3> {{ message | async | json }} </h3>
 <app-footer></app-footer>
