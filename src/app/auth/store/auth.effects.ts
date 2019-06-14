@@ -41,15 +41,21 @@ export class AuthEffects {
         switchMap( (user: User) => {
           if (user.isNewUser) {
             return [
-              new auth.LoginSuccess({ user }),
-              new auth.SaveUser({ user }),
-              new auth.CheckUserRole({ uid: user.uid })
+                      new auth.LoginSuccess({ user }),
+                      /**
+                       * rencana perubahan seteleah login sukses
+                       * a. check user if exsist by phone or email
+                       * b. SAVE USER DIHILANGKAN
+
+                      **/
+                      new auth.SaveUser({ user }),
+                      new auth.CheckUserRole({ uid: user.uid })
             ];
           } 
           else {
             return [
-              new auth.LoginSuccess({ user }), 
-              new auth.CheckUserRole({ uid: user.uid })
+                      new auth.LoginSuccess({ user }), 
+                      new auth.CheckUserRole({ uid: user.uid })
             ];
           }
         }),
