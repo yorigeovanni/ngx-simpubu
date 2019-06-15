@@ -50,7 +50,7 @@ export enum KategoriPeralatanActionTypes {
   export type KategoriPeralatanActions =
     | KategoriPeralatanQuery
     | KategoriPeralatanLoaded
-    |KategoriPeralatanAdded
+    | KategoriPeralatanAdded
     | KategoriPeralatanEdited
     | KategoriPeralatanDeleted
     | KategoriPeralatanError;

@@ -8,6 +8,6 @@ export interface KategoriPeralatanState {
 
 export const KategoriPeralatanInitialState: KategoriPeralatanState = {
     state_kategori_peralatan : null,
-    loading: false,
+    loading: true,
     error: null
 };
