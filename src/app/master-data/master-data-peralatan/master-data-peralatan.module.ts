@@ -1,9 +1,12 @@
+import { MasterDataPeralatanRoutingModule } from './master-data-peralatan-routing.module';
+import { MasterDataPeralatanComponent } from './master-data-peralatan.component';
+
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
 
-import { MasterDataPeralatanRoutingModule } from './master-data-peralatan-routing.module';
-import { MasterDataPeralatanComponent } from './master-data-peralatan.component';
+
 import { KategoriPeralatanComponent } from './kategori-peralatan/kategori-peralatan.component';
 import { TupoksiPeralatanComponent } from './tupoksi-peralatan/tupoksi-peralatan.component';
 import { LisensiPeralatanComponent } from './lisensi-peralatan/lisensi-peralatan.component';
@@ -12,11 +15,21 @@ import { ChecklistVerifikasiPeralatanComponent } from './checklist-verifikasi-pe
 import { KalibrasiPeralatanComponent } from './kalibrasi-peralatan/kalibrasi-peralatan.component';
 
 @NgModule({
-  declarations: [MasterDataPeralatanComponent, KategoriPeralatanComponent, TupoksiPeralatanComponent, LisensiPeralatanComponent, ChecklistSertifikasiPeralatanComponent, ChecklistVerifikasiPeralatanComponent, KalibrasiPeralatanComponent],
+  declarations: [ 
+      MasterDataPeralatanComponent, 
+      KategoriPeralatanComponent, 
+      TupoksiPeralatanComponent, 
+      LisensiPeralatanComponent, 
+      ChecklistSertifikasiPeralatanComponent, 
+      ChecklistVerifikasiPeralatanComponent, 
+      KalibrasiPeralatanComponent,
+    ],
+
   imports: [
-    CommonModule,
-    MasterDataPeralatanRoutingModule,
-    MDBBootstrapModulesPro,
+      CommonModule,
+      MasterDataPeralatanRoutingModule,
+      MDBBootstrapModulesPro,
   ]
 })
+
 export class MasterDataPeralatanModule { }

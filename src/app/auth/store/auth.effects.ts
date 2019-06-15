@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of, defer } from 'rxjs';
 import { map, switchMap, catchError, tap, take } from 'rxjs/operators';
-
 import { User } from '../models/user.model';
 import { AuthService } from '../services/auth.service';
-
 import * as auth from './../store/auth.actions';
 import { Actions, Effect, ofType } from '@ngrx/effects';
+
+
 
 
 // EFFECT DIEKSEKUSI KARENA ADA FUNGSI INI --- INJECTABLE
@@ -123,6 +123,7 @@ export class AuthEffects {
     switchMap( (payload: any) => this.authService.checkUserRole(payload.uid)
       .pipe(
         map( (result: any) => {
+          console.log(result);
           if(!result){
             return new auth.UpdateUserRole({ isAdmin : false });
           }

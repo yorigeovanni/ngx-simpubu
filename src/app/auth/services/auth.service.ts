@@ -60,6 +60,7 @@ export class AuthService {
 
 
   checkUserRole(uid: string) {
+    console.log(uid);
     return this.firestore.collection('list_admins').doc(uid).valueChanges();
   }
 
