@@ -47,7 +47,7 @@ export enum KategoriPeralatanActionTypes {
     constructor(public payload: { error: any }) {}
   }
   
-  export type KategoriPeralatan =
+  export type KategoriPeralatanActions =
     | KategoriPeralatanQuery
     | KategoriPeralatanLoaded
     |KategoriPeralatanAdded

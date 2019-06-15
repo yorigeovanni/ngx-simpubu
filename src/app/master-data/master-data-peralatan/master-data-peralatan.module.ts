@@ -5,7 +5,11 @@ import { MasterDataPeralatanComponent } from './master-data-peralatan.component'
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MDBBootstrapModulesPro } from 'ng-uikit-pro-standard';
+import { FormsModule } from '@angular/forms';
 
+
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { KategoriPeralatanComponent } from './kategori-peralatan/kategori-peralatan.component';
 import { TupoksiPeralatanComponent } from './tupoksi-peralatan/tupoksi-peralatan.component';
@@ -29,6 +33,10 @@ import { KalibrasiPeralatanComponent } from './kalibrasi-peralatan/kalibrasi-per
       CommonModule,
       MasterDataPeralatanRoutingModule,
       MDBBootstrapModulesPro,
+      FormsModule,
+
+    //  StoreModule.forFeature(''),
+    //  EffectsModule.forFeature([])
   ]
 })
 
