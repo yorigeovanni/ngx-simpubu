@@ -14,9 +14,10 @@ import { YandarCreateComponent } from '../yandar/yandar-create/yandar-create.com
 import { YandarReadComponent } from '../yandar/yandar-read/yandar-read.component';
 import { YandarUpdateComponent } from '../yandar/yandar-update/yandar-update.component';
 import { YandarDeleteComponent } from '../yandar/yandar-delete/yandar-delete.component';
+import { SisiUdaraComponent } from './sisi-udara/sisi-udara.component';
 
 @NgModule({
-  declarations: [SuCreateComponent, SuReadComponent, SuUpdateComponent, SuDeleteComponent, SdCreateComponent, SdReadComponent, SdUpdateComponent, SdDeleteComponent, YandarCreateComponent, YandarReadComponent, YandarUpdateComponent, YandarDeleteComponent],
+  declarations: [SuCreateComponent, SuReadComponent, SuUpdateComponent, SuDeleteComponent, SdCreateComponent, SdReadComponent, SdUpdateComponent, SdDeleteComponent, YandarCreateComponent, YandarReadComponent, YandarUpdateComponent, YandarDeleteComponent, SisiUdaraComponent],
   imports: [
     SisiUdaraRoutingModule,
     NativeScriptCommonModule
