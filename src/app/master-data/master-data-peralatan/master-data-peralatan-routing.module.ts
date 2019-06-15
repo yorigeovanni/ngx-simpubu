@@ -12,7 +12,7 @@ import { KalibrasiPeralatanComponent } from './kalibrasi-peralatan/kalibrasi-per
 const routes: Routes = [
   {path : '', component : MasterDataPeralatanComponent,
       children : [
-        {path : 'kategori-peralatan', component : KategoriPeralatanComponent},
+        {path : 'kategori-peralatan', loadChildren: './kategori-peralatan/kategori-peralatan.module#KategoriPeralatanModule'},
         {path : 'tupoksi-perawatan-peralatan', component : TupoksiPeralatanComponent},
         {path : 'lisensi-peralatan', component : LisensiPeralatanComponent},
         {path : 'checklist-sertifikasi', component : ChecklistSertifikasiPeralatanComponent},
