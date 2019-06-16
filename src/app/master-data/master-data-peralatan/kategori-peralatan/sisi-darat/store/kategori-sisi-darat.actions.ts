@@ -44,7 +44,7 @@ export class  KategoriSisiDaratError implements Action {
   constructor(public payload: { error: any }) {}
 }
 
-export type CustomersActions =
+export type KategoriSisiDaratActions =
   |  KategoriSisiDaratQuery
   |  KategoriSisiDaratLoaded
   |  KategoriSisiDaratAdded

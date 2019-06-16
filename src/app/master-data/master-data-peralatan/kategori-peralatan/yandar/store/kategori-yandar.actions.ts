@@ -44,7 +44,7 @@ export class KategoriYandarError implements Action {
   constructor(public payload: { error: any }) {}
 }
 
-export type CustomersActions =
+export type KategoriYandarActions =
   | KategoriYandarQuery
   | KategoriYandarLoaded
   | KategoriYandarAdded
