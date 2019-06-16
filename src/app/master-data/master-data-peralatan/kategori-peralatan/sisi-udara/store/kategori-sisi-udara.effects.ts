@@ -25,6 +25,41 @@ import { KategoriSisiUdaraService } from '../services/kategori-sisi-udara.servic
 @Injectable()
 export class SisiUDaraEffects {
 
-  constructor(private actions$: Actions, private customersService: KategoriSisiUdaraService, private store: Store<AppState>) {}
+  constructor(
+      private actions$: Actions, 
+      private kategoriSisiUdaraService: KategoriSisiUdaraService, 
+      private store: Store<AppState>) 
+      {}
+
+      @Effect()
+      query$ = this.actions$.pipe(
+        ofType(KategoriSisiUdaraActionTypes.KATEGORI_SISI_UDARA_QUERY),
+        withLatestFrom(this.store.pipe(select(getUser))),
+        switchMap(([, user]: any) => this.kategoriSisiUdaraService.read(user.id)
+          .pipe(
+            map((data: any) => {
+                console.log(data);
+              const kategori_sisi_udara_data: KategoriSisiUdara[] = data.map((res: any) => {
+                console.log(res.payload.doc.data())
+                const key = res.payload.key;
+                const data: KategoriSisiUdara = res.payload;
+                return {
+                  key: key,
+                  id: data.id,
+                  name: data.name,
+                  description: data.description
+                };
+              });
+              return (new LocalStateSisiUdaraAction.KategoriSisiUdaraLoaded({ kategori_peralatan_sisi_udara: kategori_sisi_udara_data }));
+            }),
+            catchError(error => {
+                console.log(error);
+              return of(new LocalStateSisiUdaraAction.KategoriSisiUdaraError({ error }));
+            })
+          )
+        ),
+      );
+
+
 
 }

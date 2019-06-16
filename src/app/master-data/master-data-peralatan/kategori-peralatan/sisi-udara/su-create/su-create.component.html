@@ -1,3 +1,23 @@
-<p>
-  su-create works!
-</p>
+<form class="text-center border border-light p-2 mt-3">
+  <h6><strong>INPUT FASILITAS PERALATAN SISI UDARA</strong></h6>
+  <p><strong>KATEGORI - {{curentKategoriPeralatan}}</strong></p>
+  <div class="md-form form-sm m-0 p-0">
+      <input mdbInput type="text" id="form1" class="form-control form-control-sm">
+      <label for="form1" class="">Nama Fasilitas</label>
+  </div>
+
+  <div class="md-form form-sm m-0 p-0">
+      <input mdbInput type="text" id="form2" class="form-control form-control-sm">
+      <label for="form2" class="">Lokasi</label>
+  </div>
+
+  <div class="md-form form-sm m-0 p-0">
+      <input mdbInput type="text" id="form3" class="form-control form-control-sm">
+      <label for="form3" class="">Tahun Pengadaan</label>
+  </div>
+
+
+  <button class="btn btn-sm btn-pink" type="submit" *ngIf="(curentKategoriPeralatan !== null)">Simpan Data</button>
+  <button class="btn btn-sm btn-pink" type="submit" *ngIf="(curentKategoriPeralatan === null)" disabled>Simpan Data</button>
+
+</form>

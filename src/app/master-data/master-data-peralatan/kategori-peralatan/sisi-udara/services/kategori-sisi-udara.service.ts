@@ -15,7 +15,9 @@ export class KategoriSisiUdaraService {
   
     create(){}
   
-    read(){}
+    read(userId: string){
+        return this.firestore.collection(`kategori_peralatan_sisi_udara`).snapshotChanges();
+    }
 
     update(){}
 
