@@ -1,6 +1,6 @@
 import * as $ from 'jquery';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-sisi-udara',
