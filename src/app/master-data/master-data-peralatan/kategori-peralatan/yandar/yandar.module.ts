@@ -15,6 +15,7 @@ import { YandarReadComponent } from './yandar-read/yandar-read.component';
 import { YandarUpdateComponent } from './yandar-update/yandar-update.component';
 import { YandarDeleteComponent } from './yandar-delete/yandar-delete.component';
 
+
 @NgModule({
   declarations: [
     YandarCreateComponent, 
@@ -22,7 +23,7 @@ import { YandarDeleteComponent } from './yandar-delete/yandar-delete.component';
     YandarUpdateComponent, 
     YandarDeleteComponent
   ],
-  
+
   imports: [
     CommonModule,
     YandarRoutingModule,
