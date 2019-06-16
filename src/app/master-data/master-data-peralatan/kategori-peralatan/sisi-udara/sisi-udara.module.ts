@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
+import * as SisiUDaraLocalReducer from './store/kategori-sisi-udara.reducer';
 
 
 import { SuCreateComponent } from './su-create/su-create.component';
@@ -28,12 +29,14 @@ import { SuDeleteComponent } from './su-delete/su-delete.component';
             SuDeleteComponent, 
             SisiUdaraComponent, 
           ],
-          
+
   imports: [
     CommonModule,
     SisiUdaraRoutingModule,
     MDBBootstrapModulesPro,
     FormsModule,
+    StoreModule.forFeature('kategori_peralatan_sisi_udara', SisiUDaraLocalReducer.KategoriSisiUdaraReducer),
+    
 
   ]
 })

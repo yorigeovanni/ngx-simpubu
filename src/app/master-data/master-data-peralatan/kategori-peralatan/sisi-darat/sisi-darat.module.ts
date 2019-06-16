@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
+import * as SisiDaratLocalReducer from './store/kategori-sisi-darat.reducer';
 
 import { SdCreateComponent } from './sd-create/sd-create.component';
 import { SdReadComponent } from './sd-read/sd-read.component';
@@ -26,7 +27,8 @@ import { SdDeleteComponent } from './sd-delete/sd-delete.component';
     CommonModule,
     SisiDaratRoutingModule,
     MDBBootstrapModulesPro,
-    FormsModule
+    FormsModule,
+    StoreModule.forFeature('kategori_peralatan_sisi_darat', SisiDaratLocalReducer.KategoriSisiDaratReducer),
   ]
 })
 export class SisiDaratModule { }
