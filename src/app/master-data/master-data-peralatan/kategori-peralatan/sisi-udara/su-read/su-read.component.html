@@ -1,12 +1,18 @@
+<div *ngIf="isLoading$ | async" class="d-flex justify-content-center align-items-center" style="margin-top: 200px">
+  <div class="spinner-grow text-primary" role="status" style="width: 4rem; height: 4rem;">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+
 <!-- form pencarian item data peralatan sisi udara -->
-<div class="row m-auto">
+<div class="row m-auto" *ngIf="!(isLoading$ | async)">
   <form class="form-inline md-form form-sm mb-0 mt-3">
       <input class="form-control form-control-sm mr-2" type="text" placeholder="Cari Fasilitas Sisi Udara" aria-label="Search" mdbInput>
   </form>
 </div>
 
 <!-- container peralatan sisi udara -->
-<div class="row m-auto">
+<div class="row m-auto" *ngIf="!(isLoading$ | async)">
   <div class="list-group mt-2">
       <a class="list-group-item list-group-item-action flex-column align-items-start" data-toggle="modal" data-target="#basicExample" (click)="frame.show()">
         <div class="d-flex w-100 justify-content-between">

@@ -38,11 +38,12 @@ export class SisiUDaraEffects {
         switchMap(([, user]: any) => this.kategoriSisiUdaraService.read(user.id)
           .pipe(
             map((data: any) => {
+                
                 console.log(data);
               const kategori_sisi_udara_data: KategoriSisiUdara[] = data.map((res: any) => {
                 console.log(res.payload.doc.data())
                 const key = res.payload.key;
-                const data: KategoriSisiUdara = res.payload;
+                const data: KategoriSisiUdara = res.payload.doc;
                 return {
                   key: key,
                   id: data.id,
