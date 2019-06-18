@@ -1,5 +1,5 @@
 
-<mdb-navbar #nav SideClass="navbar navbar-expand-lg navbar-dark blue-gradient white">
+<mdb-navbar #nav SideClass="navbar navbar-expand-lg navbar-dark blue-gradient">
   <mdb-navbar-brand>
     <img src="assets/logo/perhubungan.png" height="55px" width="55px" class="img-fluid flex-center d-none d-lg-block">
   </mdb-navbar-brand>
@@ -22,12 +22,7 @@
   
   <links>
   <ul class="navbar-nav nav-flex-icons ml-auto">
-    <li class="nav-item waves-light d-none d-lg-block">
-      <a class="nav-link" routerLink="/peralatan" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-cogs"></i> PERALATAN</a>
-    </li>
-    <li class="nav-item waves-light d-lg-none">
-      <a class="nav-link" routerLink="/peralatan" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-cogs mr-auto"></i> PERALATAN</a>
-    </li>
+    
     <li class="nav-item waves-light d-none d-lg-block">
       <a class="nav-link" routerLink="/personil" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-chalkboard-teacher"></i> PERSONIL</a>
     </li>
@@ -52,83 +47,127 @@
     <li class="nav-item waves-light d-lg-none" *ngIf="isLoggedIn && isAdmin">
         <a class="nav-link" routerLink="/master-data" routerLinkActive="active" mdbWavesEffect><i class="fas fa-database mr-auto"></i></a>
     </li>
-    <li class="nav-item waves-light d-none d-lg-block" *ngIf="!isLoggedIn">
-        <a class="nav-link" routerLink="/global-auth/login" routerLinkActive="active" mdbWavesEffect><i class="fas fa-shield-alt"></i> MASUK</a>
-    </li>
-    <li class="nav-item waves-light d-lg-none" *ngIf="!isLoggedIn">
-        <a class="nav-link" routerLink="/global-auth/login" routerLinkActive="active" mdbWavesEffect><i class="fas fa-shield-alt mr-auto"></i></a>
-    </li>
+    
 
             
 
      
    
     <li class="nav-item dropdown mega-dropdown" mdbDropdown>
-      <a mdbDropdownToggle class="nav-link dropdown-toggle text-uppercase no-caret" aria-haspopup="true"
-        aria-expanded="false">PORTAL - IMSIS</a>
-      <div class="dropdown-menu mega-menu v-2 row z-depth-1 blue-gradient">
+      <a mdbDropdownToggle class="nav-link dropdown-toggle text-uppercase no-caret" aria-haspopup="true" aria-expanded="false">DBU - OTBAN</a>
+      <div class="dropdown-menu mega-menu v-2 row z-depth-1 menu-gradient">
         <div class="row mx-md-4 mx-1">
 
           <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-5 mb-4">
-            <h6 class="sub-title text-uppercase font-weight-bold white-text">SUB 1</h6>
-            <ul class="list-unstyled">
-              <li class="">
-                <a class="menu-item pl-0" href="">
-                  <mdb-icon fas icon="caret-right" class="pl-1 pr-3"></mdb-icon> Lorem ipsum dolor sit amet
+            <h6 class="sub-title text-uppercase font-weight-bold white-text">FASILITAS - PERALATAN</h6>
+            <div class="m-auto white-text">
+                <a [routerLinkActive]="['active']" [routerLink]="['./semua-peralatan']" class="col-3 text-center text-white btn btn-flat" role="button">
+                    <i class="fab fa-whmcs fa-4x m-auto p-auto"></i><br> <span class="mt-1 menu-desc">SEMUA</span>
                 </a>
-              </li>
-            </ul>
-          </div>
+                <a [routerLinkActive]="['active']" [routerLink]="['./sisi-udara']" class="col-3 text-center text-white btn btn-flat" role="button">
+                  <i class="fas fa-satellite-dish  fa-4x m-auto p-auto"></i><br> <span class="mt-1 menu-desc">SISI UDARA</span>
+              </a>
 
-          <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-md-5 mt-4 mb-4">
-            <h6 class="sub-title text-uppercase font-weight-bold white-text">Related</h6>
-            <!--Featured image-->
-            <div class="view overlay mb-3 z-depth-1">
-              <img src="https://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(43).jpg" class="img-fluid"
-                alt="First sample image">
-              <div class="mask rgba-white-slight flex-center">
-                <p></p>
-              </div>
-            </div>
-            <h4 class="mb-2">
-              <a class="news-title pl-0" href="">Lorem ipsum dolor sit</a>
-            </h4>
-            <p class="font-small text-uppercase white-text">
-              <i class="far fa-clock pr-2" aria-hidden="true"></i>July 17, 2017 /
-              <i class="far fa-comments px-1" aria-hidden="true"></i> 20</p>
-          </div>
+              
 
-          <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-4 mb-4">
-            <h6 class="sub-title text-uppercase font-weight-bold white-text">Design</h6>
-            <!--Featured image-->
-            <div class="view overlay mb-3 z-depth-1">
-              <img src="https://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(44).jpg" class="img-fluid"
-                alt="First sample image">
-              <div class="mask rgba-white-slight flex-center">
-                <p></p>
-              </div>
-            </div>
-            <h4 class="mb-2">
-              <a class="news-title pl-0" href="">Ut labore et dolore magna</a>
-            </h4>
-            <p class="font-small text-uppercase white-text">
-              <i class="far fa-clock pr-2" aria-hidden="true"></i>July 16, 2017 /
-              <i class="far fa-comments px-1" aria-hidden="true"></i> 25</p>
-          </div>
-
-          <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-4 mb-5">
-            <h6 class="sub-title text-uppercase font-weight-bold white-text">Sub 2</h6>
-            <ul class="list-unstyled">
-              <li class="">
-                <a class="menu-item pl-0" href="">
-                  <mdb-icon fas icon="caret-right" class="pl-1 pr-3"></mdb-icon> Totam rem aperiam eaque
+                <a [routerLinkActive]="['active']" [routerLink]="['./sisi-darat']" class="col-3 text-center text-white btn btn-flat" role="button" aria-pressed="true">
+                    <i class="fas fa-charging-station fa-4x"></i><br> <span class="mt-1 menu-desc">SISI DARAT</span>
                 </a>
-              </li>
-            </ul>
+
+                <a [routerLinkActive]="['active']" [routerLink]="['./yandar']" class="col-3 text-center text-white btn btn-flat" role="button" aria-pressed="true">
+                    <i class="fas  fa-fire-extinguisher fa-4x"></i><br> <span class="mt-1 menu-desc">PKP -PK</span>
+                </a>
+
+                <a [routerLinkActive]="['active']" [routerLink]="['./suku-cadang']" class="col-3 text-center text-white btn btn-flat" role="button" aria-pressed="true">
+                    <i class="fab fa-steam-symbol fa-4x"></i><br> <span class="mt-1 menu-desc">SPAREPARTS</span>
+                </a>
+
+                <a [routerLinkActive]="['active']" [routerLink]="['./kerusakan-perbaikan']" class="col-3 text-white btn btn-flat" role="button" aria-pressed="true">
+                    <i class="fas fa-tools fa-4x"></i><br> <span class="mt-1 menu-desc">LKP</span>
+                </a>
+
+                <a [routerLinkActive]="['active']" [routerLink]="['./sertifikasi']" class="col-3 text-center text-white btn btn-flat" role="button" aria-pressed="true">
+                    <i class="fas fa-edit fa-4x"></i><br> <span class="mt-1 menu-desc">SERTIFIKASI</span>
+                </a>
+
+                <a [routerLinkActive]="['active']" [routerLink]="['./verifikasi']"class="col-3 text-center text-white btn btn-flat" role="button" aria-pressed="true">
+                    <i class="fas fa-diagnoses fa-4x"></i><br> <span class="mt-1 menu-desc">VERIFIKASI</span>
+                </a>
+
+                <a [routerLinkActive]="['active']" [routerLink]="['./kalibrasi']" class="col-3 text-center text-white btn btn-flat" role="button" aria-pressed="true">
+                    <i class="fas fa-drafting-compass fa-4x"></i><br> <span class="mt-1 menu-desc">KALIBRASI</span>
+                </a>
+        </div>     
           </div>
+
+          <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-5 mb-4">
+              <h6 class="sub-title text-uppercase font-weight-bold white-text">PERSONIL  BERLISENSI</h6>
+              <div class="m-auto white-text">
+                  <a [routerLinkActive]="['active']" [routerLink]="['./semua-peralatan']" class="col-3 text-center text-white btn btn-flat" role="button">
+                    <i class="fas fa-th-large fa-4x m-auto p-auto"></i><br> <span class="mt-1 menu-desc">DASHBOARD INFORMASI</span>
+                </a>
+                  <a [routerLinkActive]="['active']" [routerLink]="['./semua-peralatan']" class="col-3 text-center text-white btn btn-flat" role="button">
+                      <i class="fas fa-address-card fa-4x m-auto p-auto"></i><br> <span class="mt-1 menu-desc">PENDATAAN PERSONIL</span>
+                  </a>
+                  <a [routerLinkActive]="['active']" [routerLink]="['./sisi-udara']" class="col-3 text-center text-white btn btn-flat" role="button">
+                    <i class="fas fa-redo-alt fa-4x m-auto p-auto"></i><br> <span class="mt-1 menu-desc">PERPANJANG LISENSI</span>
+                  </a>
+                  <a [routerLinkActive]="['active']" [routerLink]="['./sisi-darat']" class="col-3 text-center text-white btn btn-flat" role="button" aria-pressed="true">
+                      <i class="fas fa-user-times fa-4x"></i><br> <span class="mt-1 menu-desc">LISENSI EXPIRES</span>
+                  </a>
+                  <a [routerLinkActive]="['active']" [routerLink]="['./sisi-darat']" class="col-3 text-center text-white btn btn-flat" role="button" aria-pressed="true">
+                    <i class="fas fa-user-plus fa-4x"></i><br> <span class="mt-1 menu-desc">PENGAJUAN BARU</span>
+                </a>
+          </div>     
+        </div>
+
+        <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-5 mb-4">
+            <h6 class="sub-title text-uppercase font-weight-bold white-text">SERTIFIKASI SATKER - MITRA</h6>
+            <div class="m-auto white-text">
+                <a [routerLinkActive]="['active']" [routerLink]="['./semua-peralatan']" class="col-3 text-center text-white btn btn-flat" role="button">
+                  <i class="fas fa-th-large fa-4x m-auto p-auto"></i><br> <span class="mt-1 menu-desc">DASHBOARD INFORMASI</span>
+              </a>
+                <a [routerLinkActive]="['active']" [routerLink]="['./semua-peralatan']" class="col-3 text-center text-white btn btn-flat" role="button">
+                    <i class="fas fa-map-marked-alt fa-4x m-auto p-auto"></i><br> <span class="mt-1 menu-desc">PENDATAAN SATKER</span>
+                </a>
+                <a [routerLinkActive]="['active']" [routerLink]="['./sisi-udara']" class="col-3 text-center text-white btn btn-flat" role="button">
+                  <i class="fas fa-sort-amount-up  fa-4x m-auto p-auto"></i><br> <span class="mt-1 menu-desc">PERPANJANG SERTIFIKAT</span>
+                </a>
+                <a [routerLinkActive]="['active']" [routerLink]="['./sisi-darat']" class="col-3 text-center text-white btn btn-flat" role="button" aria-pressed="true">
+                    <i class="fas fa-exclamation-triangle fa-4x"></i><br> <span class="mt-1 menu-desc">SERTIFIKAT EXPIRES</span>
+                </a>
+                <a [routerLinkActive]="['active']" [routerLink]="['./sisi-darat']" class="col-3 text-center text-white btn btn-flat" role="button" aria-pressed="true">
+                  <i class="fas fa-list-alt fa-4x"></i><br> <span class="mt-1 menu-desc">PENGAJUAN BARU</span>
+              </a>
+        </div>     
+      </div>
+
+      <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-5 mb-4">
+          <h6 class="sub-title text-uppercase font-weight-bold white-text">REGULASI DBU</h6>
+          <div class="m-auto white-text">
+              <a [routerLinkActive]="['active']" [routerLink]="['./sisi-darat']" class="col-3 text-center text-white btn btn-flat" role="button" aria-pressed="true">
+                <i class="fas fa-th-large fa-4x"></i><br> <span class="mt-1 menu-desc">DASHBOARD INFORMASI</span>
+            </a>
+              <a [routerLinkActive]="['active']" [routerLink]="['./semua-peralatan']" class="col-3 text-center text-white btn btn-flat" role="button">
+                <i class="fas fa-certificate fa-4x m-auto p-auto"></i><br> <span class="mt-1 menu-desc">REGULASI TERBARU</span>
+            </a>
+              <a [routerLinkActive]="['active']" [routerLink]="['./semua-peralatan']" class="col-3 text-center text-white btn btn-flat" role="button">
+                  <i class="fas fa-cogs fa-4x m-auto p-auto"></i><br> <span class="mt-1 menu-desc">REGULASI PERALATAN</span>
+              </a>
+              <a [routerLinkActive]="['active']" [routerLink]="['./sisi-udara']" class="col-3 text-center text-white btn btn-flat" role="button">
+                <i class="fas fa-restroom  fa-4x m-auto p-auto"></i><br> <span class="mt-1 menu-desc">REGULASI PERSONIL</span>
+              </a>
+              <a [routerLinkActive]="['active']" [routerLink]="['./sisi-darat']" class="col-3 text-center text-white btn btn-flat" role="button" aria-pressed="true">
+                  <i class="fas fa-plane-departure fa-4x"></i><br> <span class="mt-1 menu-desc">REGULASI SATKER</span>
+              </a>
+            
+      </div>     
+    </div>
         </div>
       </div>
     </li>
+
+
 
     <li class="nav-item waves-light text-white  d-none d-lg-block" *ngIf="isLoggedIn" >
         <button type="button" class="btn btn-sm btn-danger btn-rounded" data-toggle="modal" data-target="#modal-account">
@@ -139,6 +178,14 @@
         <button type="button" class="btn btn-sm btn-danger btn-rounded mr-auto" data-toggle="modal" data-target="#modal-account">
           <i class="fas fa-shield-alt"></i>
         </button>
+    </li>
+
+
+    <li class="nav-item waves-light d-none d-lg-block" *ngIf="!isLoggedIn">
+        <a class="nav-link" routerLink="/global-auth/login" routerLinkActive="active" mdbWavesEffect><i class="fas fa-shield-alt"></i> MASUK</a>
+    </li>
+    <li class="nav-item waves-light d-lg-none" *ngIf="!isLoggedIn">
+        <a class="nav-link" routerLink="/global-auth/login" routerLinkActive="active" mdbWavesEffect><i class="fas fa-shield-alt mr-auto"></i></a>
     </li>
   
   </ul>

@@ -3,7 +3,6 @@
   border-radius: 4px;
 }
 
-
 .mega-menu::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
   background-color: #F5F5F5;
@@ -19,5 +18,13 @@
   border-radius: 2px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
   background-color: #429bdc;
+}
+
+.menu-desc { 
+  font-size: 10px; 
+}
+
+.menu-gradient {
+  background: linear-gradient(40deg, #3c7cc8, #303f9f) !important;
 }
 
