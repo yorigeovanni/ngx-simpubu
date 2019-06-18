@@ -1,84 +1,204 @@
-<header class="h-100">
+<!--Navbar-->
+<mdb-navbar #nav SideClass="navbar navbar-expand-lg navbar-dark blue-gradient white">
 
-  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar blue-gradient" [containerInside]="true">
-      <mdb-navbar-brand>
-         <img src="assets/logo/perhubungan.png" height="55px" width="55px" class="img-fluid flex-center d-none d-lg-block">
-      </mdb-navbar-brand>
+  <!-- Navbar brand -->
+  <mdb-navbar-brand>
+    <img src="assets/logo/perhubungan.png" height="55px" width="55px" class="img-fluid flex-center d-none d-lg-block">
+  </mdb-navbar-brand>
+  <a class="navbar-brand ml-3 mt-0 d-none d-lg-block" routerLink="/">
+    <strong>PORTAL - DJPU </strong> <span style="font-size: 10px" class="online-span"><i class="fas fa-wifi ml-2"></i> MODE ONLINE</span><span style="font-size: 10px" class="offline-span"><i class="fas fa-wifi ml-2 text-danger"></i> MODE OFFLINE</span> 
+      <br>
+      <strong><span class="font-weight-bold">DIREKTORAT BANDAR UDARA</span></strong> 
+    </a>
 
-      <a class="navbar-brand ml-3 mt-0 d-none d-lg-block" routerLink="/">
-      <strong>PORTAL - DJPU </strong> <span style="font-size: 10px" class="online-span"><i class="fas fa-wifi ml-2"></i> MODE ONLINE</span><span style="font-size: 10px" class="offline-span"><i class="fas fa-wifi ml-2 text-danger"></i> MODE OFFLINE</span> 
-        <br>
-        <strong><span class="font-weight-bold">DIREKTORAT BANDAR UDARA</span></strong> 
-      </a>
+    <a class="navbar-brand mr-auto mt-0 d-lg-none" routerLink="/">
+    <strong><span class="font-weight-bold">SIMPUBU-DBU</span></strong> <span style="font-size: 10px" class="online-span"><i class="fas fa-wifi ml-2"></i> MODE ONLINE</span><span style="font-size: 10px" class="offline-span"><i class="fas fa-wifi ml-2 text-danger"></i> MODE OFFLINE</span>
+    </a> 
+  
+  <links>
 
-      <a class="navbar-brand mr-auto mt-0 d-lg-none" routerLink="/">
-      <strong><span class="font-weight-bold">SIMPUBU-DBU</span></strong> <span style="font-size: 10px" class="online-span"><i class="fas fa-wifi ml-2"></i> MODE ONLINE</span><span style="font-size: 10px" class="offline-span"><i class="fas fa-wifi ml-2 text-danger"></i> MODE OFFLINE</span>
-      </a> 
+  <ul class="navbar-nav nav-flex-icons ml-auto">
 
-      <links>
-        <ul class="navbar-nav nav-flex-icons ml-auto">
-
-            <li class="nav-item waves-light d-none d-lg-block">
-              <a class="nav-link mt-1" routerLink="/peralatan" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-cogs"></i> PERALATAN</a>
-            </li>
-            <li class="nav-item waves-light d-lg-none">
-                <a class="nav-link mt-1" routerLink="/peralatan" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-2x fa-cogs mr-auto"></i></a>
-            </li>
-
+    
 
             <li class="nav-item waves-light d-none d-lg-block">
-              <a class="nav-link mt-1" routerLink="/personil" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-chalkboard-teacher"></i> PERSONIL</a>
+              <a class="nav-link" routerLink="/peralatan" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-cogs"></i> PERALATAN</a>
             </li>
             <li class="nav-item waves-light d-lg-none">
-                <a class="nav-link mt-1" routerLink="/personil" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-2x fa-chalkboard-teacher mr-auto"></i></a>
+                <a class="nav-link" routerLink="/peralatan" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-cogs mr-auto"></i> PERALATAN</a>
             </li>
 
 
             <li class="nav-item waves-light d-none d-lg-block">
-              <a class="nav-link mt-1" routerLink="/satker" routerLinkActive="active" mdbWavesEffect><i class="fas fa-city"></i> SATKER</a>
+              <a class="nav-link" routerLink="/personil" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-chalkboard-teacher"></i> PERSONIL</a>
             </li>
             <li class="nav-item waves-light d-lg-none">
-                <a class="nav-link mt-1" routerLink="/satker" routerLinkActive="active" mdbWavesEffect><i class="fas fa-2x fa-city mr-auto"></i></a>
+                <a class="nav-link" routerLink="/personil" routerLinkActive="active" mdbWavesEffect> <i class="fas fa-chalkboard-teacher mr-auto"></i> PERSONIL</a>
             </li>
 
 
             <li class="nav-item waves-light d-none d-lg-block">
-                <a class="nav-link mt-1" routerLink="/regulasi" routerLinkActive="active" mdbWavesEffect><i class="fas fa-balance-scale"></i> REGULASI</a>
+              <a class="nav-link" routerLink="/satker" routerLinkActive="active" mdbWavesEffect><i class="fas fa-city"></i> SATKER</a>
             </li>
             <li class="nav-item waves-light d-lg-none">
-                <a class="nav-link mt-1" routerLink="/regulasi" routerLinkActive="active" mdbWavesEffect><i class="fas fa-2x fa-balance-scale mr-auto"></i></a>
+                <a class="nav-link" routerLink="/satker" routerLinkActive="active" mdbWavesEffect><i class="fas fa-city mr-auto"></i> SATKER</a>
+            </li>
+
+
+            <li class="nav-item waves-light d-none d-lg-block">
+                <a class="nav-link" routerLink="/regulasi" routerLinkActive="active" mdbWavesEffect><i class="fas fa-balance-scale"></i> REGULASI</a>
+            </li>
+            <li class="nav-item waves-light d-lg-none">
+                <a class="nav-link" routerLink="/regulasi" routerLinkActive="active" mdbWavesEffect><i class="fas fa-balance-scale mr-auto"></i></a>
             </li>
 
             <li class="nav-item waves-light d-none d-lg-block" *ngIf="isLoggedIn && isAdmin">
-                <a class="nav-link mt-1" routerLink="/master-data" routerLinkActive="active" mdbWavesEffect><i class="fas fa-database"></i> MASTER DATA</a>
+                <a class="nav-link" routerLink="/master-data" routerLinkActive="active" mdbWavesEffect><i class="fas fa-database"></i> MASTER DATA</a>
             </li>
             <li class="nav-item waves-light d-lg-none" *ngIf="isLoggedIn && isAdmin">
-                <a class="nav-link mt-1" routerLink="/master-data" routerLinkActive="active" mdbWavesEffect><i class="fas fa-2x fa-database mr-auto"></i></a>
+                <a class="nav-link" routerLink="/master-data" routerLinkActive="active" mdbWavesEffect><i class="fas fa-database mr-auto"></i></a>
             </li>
 
 
             <li class="nav-item waves-light d-none d-lg-block" *ngIf="!isLoggedIn">
-                <a class="nav-link mt-1" routerLink="/global-auth/login" routerLinkActive="active" mdbWavesEffect><i class="fas fa-shield-alt"></i> MASUK</a>
+                <a class="nav-link" routerLink="/global-auth/login" routerLinkActive="active" mdbWavesEffect><i class="fas fa-shield-alt"></i> MASUK</a>
             </li>
             <li class="nav-item waves-light d-lg-none" *ngIf="!isLoggedIn">
-                <a class="nav-link mt-1" routerLink="/global-auth/login" routerLinkActive="active" mdbWavesEffect><i class="fas fa-2x fa-shield-alt mr-auto"></i></a>
+                <a class="nav-link" routerLink="/global-auth/login" routerLinkActive="active" mdbWavesEffect><i class="fas fa-shield-alt mr-auto"></i></a>
             </li>
 
-            <li class="nav-item waves-light text-white  d-none d-lg-block" *ngIf="isLoggedIn" >
-                <button type="button" class="btn btn-sm btn-danger btn-rounded" data-toggle="modal" data-target="#modal-account">
-                  <i class="fas fa-shield-alt"></i> AKUN ANDA
-                </button>
-            </li>
-            <li class="nav-item waves-light text-white d-lg-none" *ngIf="isLoggedIn">
-                <button type="button" class="btn btn-sm btn-danger btn-rounded mr-auto" data-toggle="modal" data-target="#modal-account">
-                  <i class="fas fa-2x fa-shield-alt"></i>
-                </button>
-            </li>
+            
 
-        </ul>
-      </links>
+     
+   
+    <li class="nav-item dropdown mega-dropdown" mdbDropdown>
+      <a mdbDropdownToggle class="nav-link dropdown-toggle text-uppercase no-caret" aria-haspopup="true"
+        aria-expanded="false">PORTAL - IMSIS</a>
+      <div class="dropdown-menu mega-menu v-2 row z-depth-1 blue-gradient">
+        <div class="row mx-md-4 mx-1">
+          <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-5 mb-4">
+            <h6 class="sub-title text-uppercase font-weight-bold white-text">PORTAL UTAMA</h6>
+            <ul class="list-unstyled">
+              <li class="">
+                <a class="menu-item pl-0" href="">
+                  <mdb-icon fas icon="caret-right" class="pl-1 pr-3"></mdb-icon> Lorem ipsum dolor sit amet
+                </a>
+              </li>
+              <li class="">
+                <a class="menu-item pl-0" href="">
+                  <mdb-icon fas icon="caret-right" class="pl-1 pr-3"></mdb-icon> Consectetur adipiscing elit
+                </a>
+              </li>
+              <li class="">
+                <a class="menu-item pl-0" href="">
+                  <mdb-icon fas icon="caret-right" class="pl-1 pr-3"></mdb-icon> Sed do eiusmod tempor incididunt
+                </a>
+              </li>
+              <li class="">
+                <a class="menu-item pl-0" href="">
+                  <mdb-icon fas icon="caret-right" class="pl-1 pr-3"></mdb-icon> Ut labore et dolore magna
+                </a>
+              </li>
+              <li class="">
+                <a class="menu-item pl-0" href="">
+                  <mdb-icon fas icon="caret-right" class="pl-1 pr-3"></mdb-icon> Ut enim ad minim veniam
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-md-5 mt-4 mb-4">
+            <h6 class="sub-title text-uppercase font-weight-bold white-text">Related</h6>
+            <!--Featured image-->
+            <div class="view overlay mb-3 z-depth-1">
+              <img src="https://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(43).jpg" class="img-fluid"
+                alt="First sample image">
+              <div class="mask rgba-white-slight flex-center">
+                <p></p>
+              </div>
+            </div>
+            <h4 class="mb-2">
+              <a class="news-title pl-0" href="">Lorem ipsum dolor sit</a>
+            </h4>
+            <p class="font-small text-uppercase white-text">
+              <i class="far fa-clock pr-2" aria-hidden="true"></i>July 17, 2017 /
+              <i class="far fa-comments px-1" aria-hidden="true"></i> 20</p>
+          </div>
+          <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-4 mb-4">
+            <h6 class="sub-title text-uppercase font-weight-bold white-text">Design</h6>
+            <!--Featured image-->
+            <div class="view overlay mb-3 z-depth-1">
+              <img src="https://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(44).jpg" class="img-fluid"
+                alt="First sample image">
+              <div class="mask rgba-white-slight flex-center">
+                <p></p>
+              </div>
+            </div>
+            <h4 class="mb-2">
+              <a class="news-title pl-0" href="">Ut labore et dolore magna</a>
+            </h4>
+            <p class="font-small text-uppercase white-text">
+              <i class="far fa-clock pr-2" aria-hidden="true"></i>July 16, 2017 /
+              <i class="far fa-comments px-1" aria-hidden="true"></i> 25</p>
+          </div>
+          <div class="col-md-6 col-xl-3 sub-menu my-xl-5 mt-4 mb-5">
+            <h6 class="sub-title text-uppercase font-weight-bold white-text">Programming</h6>
+            <ul class="list-unstyled">
+              <li class="">
+                <a class="menu-item pl-0" href="">
+                  <mdb-icon fas icon="caret-right" class="pl-1 pr-3"></mdb-icon> Totam rem aperiam eaque
+                </a>
+              </li>
+              <li class="">
+                <a class="menu-item pl-0" href="">
+                  <mdb-icon fas icon="caret-right" class="pl-1 pr-3"></mdb-icon> Beatae vitae dicta sun
+                </a>
+              </li>
+              <li class="">
+                <a class="menu-item pl-0" href="">
+                  <mdb-icon fas icon="caret-right" class="pl-1 pr-3"></mdb-icon> Quae ab illo inventore veritatis et
+                  quasi architecto
+                </a>
+              </li>
+              <li class="">
+                <a class="menu-item pl-0" href="">
+                  <mdb-icon fas icon="caret-right" class="pl-1 pr-3"></mdb-icon> Nemo enim ipsam voluptatem
+                </a>
+              </li>
+              <li class="">
+                <a class="menu-item pl-0" href="">
+                  <mdb-icon fas icon="caret-right" class="pl-1 pr-3"></mdb-icon> Neque porro quisquam est
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="nav-item waves-light text-white  d-none d-lg-block" *ngIf="isLoggedIn" >
+        <button type="button" class="btn btn-sm btn-danger btn-rounded" data-toggle="modal" data-target="#modal-account">
+          <i class="fas fa-shield-alt"></i> AKUN ANDA
+        </button>
+    </li>
+    <li class="nav-item waves-light text-white d-lg-none" *ngIf="isLoggedIn">
+        <button type="button" class="btn btn-sm btn-danger btn-rounded mr-auto" data-toggle="modal" data-target="#modal-account">
+          <i class="fas fa-shield-alt"></i>
+        </button>
+    </li>
+  
+  </ul>
+  <!--
+  <form class="form-inline waves-light" mdbWavesEffect>
+    <div class="md-form">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    </div>
+  </form>
+  -->
+  </links>
+  
   </mdb-navbar>
-</header>
+  <!--/.Navbar-->
+
 
 
   

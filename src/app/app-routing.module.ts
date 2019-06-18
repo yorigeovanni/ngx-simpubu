@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-
-
 import { WelcomeComponent } from './template/welcome/welcome.component';
 import { NotFoundComponent } from './pages-errors/not-found/not-found.component';
+
+
 
 const routes: Routes = [
 	{ path: '', component: WelcomeComponent },
@@ -16,6 +16,8 @@ const routes: Routes = [
 	{ path: 'master-data', loadChildren: './master-data/master-data.module#MasterDataModule',},
   	{ path: '**', component: NotFoundComponent }
 ];
+
+
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],

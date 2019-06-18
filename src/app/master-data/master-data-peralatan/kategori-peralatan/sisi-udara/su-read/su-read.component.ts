@@ -1,10 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Subscription, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { take, map } from 'rxjs/operators';
 import { KategoriSisiUdara } from '../models/kategori-sisi-udara.model';
 
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 
 
 import { AppState } from '../../../../../reducers/index';
@@ -21,12 +21,11 @@ import { getDataKategoriPeralatanSisiUdara, getIsLoading } from '../store/katego
 })
 
 
-export class SuReadComponent implements OnInit, OnDestroy{
+export class SuReadComponent implements OnInit{
 
   isLoading$: Observable<boolean>;
-  peralatan_kategori_sisi_udara : KategoriSisiUdara[] | null;
-  kategoriSisiUdaraSub: Subscription;
-  lastKategoriPeralatanSisiUdaraIndex: number;
+  peralatan_kategori_sisi_udara$ : Observable <KategoriSisiUdara[] | null>;
+ 
 
   constructor( 
     private afAuth: AngularFireAuth, 
@@ -38,33 +37,21 @@ export class SuReadComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit() {
+    this.store.dispatch(new fromSisiUdaraLocalAction.KategoriSisiUdaraQuery());
     this.isLoading$ = this.store.select(getIsLoading);
-    this.kategoriSisiUdaraSub = this.store.select(getDataKategoriPeralatanSisiUdara).pipe(
-      map( (peralatan_kategori_sisi_udara: KategoriSisiUdara[]) => {
-        if (this.user && !peralatan_kategori_sisi_udara) {
+    this.peralatan_kategori_sisi_udara$ = this.store.pipe(
+      select(getDataKategoriPeralatanSisiUdara),
+      map( (projects: KategoriSisiUdara[]) => {
+        if (this.user && !projects) {
           this.store.dispatch(new fromSisiUdaraLocalAction.KategoriSisiUdaraQuery());
         }
-        return peralatan_kategori_sisi_udara;
+        return projects;
       })
-    )
-    .subscribe( (peralatan_kategori_sisi_udara: KategoriSisiUdara[]) => {
-      if (peralatan_kategori_sisi_udara && peralatan_kategori_sisi_udara.length !== 0) {
-        const index: number = Number(peralatan_kategori_sisi_udara[peralatan_kategori_sisi_udara.length - 1].id);
-        this.lastKategoriPeralatanSisiUdaraIndex = index;
-      } else {
-        this.lastKategoriPeralatanSisiUdaraIndex = 0;
-      }
-
-      this.peralatan_kategori_sisi_udara = peralatan_kategori_sisi_udara;
-    });
+    );
+    
    
   }
 
 
-  ngOnDestroy() {
-    if (this.kategoriSisiUdaraSub) {
-      this.kategoriSisiUdaraSub.unsubscribe();
-    }
-  }
 
 }

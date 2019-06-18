@@ -43,7 +43,7 @@ export class SisiUDaraEffects {
               const kategori_sisi_udara_data: KategoriSisiUdara[] = data.map((res: any) => {
                 console.log(res.payload.doc.data())
                 const key = res.payload.key;
-                const data: KategoriSisiUdara = res.payload.doc;
+                const data: KategoriSisiUdara = res.payload.doc.data();
                 return {
                   key: key,
                   id: data.id,
